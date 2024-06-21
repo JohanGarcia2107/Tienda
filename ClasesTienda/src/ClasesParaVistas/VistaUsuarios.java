@@ -4,7 +4,6 @@
  */
 package ClasesParaVistas;
 
-import MetodosSQL.TipoUsuariosSQL;
 import Sql.Conexion;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -25,28 +24,31 @@ public class VistaUsuarios {
     private String EmailUsuario;
     private String TelefonoUsuario;
     private String TipoUsuario;
+    private String NombreActividad;
 
-    public VistaUsuarios (int IdUsuario, String NombreUsuario, String EmailUsuario, String TelefonoUsuario, String TipoUsuario) {
+    public VistaUsuarios (int IdUsuario, String NombreUsuario, String EmailUsuario, String TelefonoUsuario, String TipoUsuario, String NombreActividad) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.EmailUsuario = EmailUsuario;
         this.TelefonoUsuario = TelefonoUsuario;
         this.TipoUsuario = TipoUsuario;
+        this.NombreActividad = NombreActividad;
     }
     
     public VistaUsuarios () {
        
     }
     
-        public List<VistaUsuarios> ListarUsuarios (){
+    public List<VistaUsuarios> ListarUsuarios (){
         
         try {
             
             Connection conexion = Conexion.getConection();
             Statement stnt = conexion.createStatement();
             ResultSet rs;
-            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo from Usuarios a"
-                    + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo ";
+            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo, c.NombreCtividad from Usuarios a"
+                    + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo "
+                    + "\n left join Actividad c on c.IdActividad =  a.IdActividad ";
             stnt.executeQuery(Consulta);
             rs = stnt.executeQuery(Consulta);
             
@@ -58,10 +60,11 @@ public class VistaUsuarios {
                 String EmailUsuario = rs.getString("Email");
                 String TelefonoUsuario = rs.getString("Telefono");
                 String TipoUsuario =rs.getString("NombreTipo");
+                String NombreActividad =rs.getString("NombreCtividad");
                 
                 
                 
-                VistaUsuarios VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario);
+                VistaUsuarios VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario,NombreActividad);
                 
                 ListaUsers.add(VistaUsuarios);
 
@@ -75,7 +78,97 @@ public class VistaUsuarios {
             
         } catch (SQLException ex) {
             
-            Logger.getLogger(TipoUsuariosSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VistaUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }   
+    }
+    
+    public List<VistaUsuarios> ListarUsuarios (String Nombre){
+        
+        try {
+            
+            Connection conexion = Conexion.getConection();
+            Statement stnt = conexion.createStatement();
+            ResultSet rs;
+            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo, c.NombreCtividad from Usuarios a"
+                    + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo "
+                    + "\n left join Actividad c on c.IdActividad =  a.IdActividad "
+                    + "\n where a.Nombre =  '"+Nombre+"%'";
+            stnt.executeQuery(Consulta);
+            rs = stnt.executeQuery(Consulta);
+            
+            List<VistaUsuarios> ListaUsers = new ArrayList<>();
+            
+            while (rs.next()){
+                int idUsuario = rs.getInt("IdUsuario");
+                String NombreUsuario = rs.getString("Nombre");
+                String EmailUsuario = rs.getString("Email");
+                String TelefonoUsuario = rs.getString("Telefono");
+                String TipoUsuario =rs.getString("NombreTipo");
+                String NombreActividad =rs.getString("NombreCtividad");
+                
+                
+                
+                VistaUsuarios VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario,NombreActividad);
+                
+                ListaUsers.add(VistaUsuarios);
+
+            }
+            
+            rs.close();
+            stnt.close();
+            conexion.close();
+            
+            return ListaUsers;
+            
+        } catch (SQLException ex) {
+            
+            Logger.getLogger(VistaUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }   
+    }
+    
+    public List<VistaUsuarios> ListarUsuarios (int _Id){
+        
+        try {
+            
+            Connection conexion = Conexion.getConection();
+            Statement stnt = conexion.createStatement();
+            ResultSet rs;
+            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo, c.NombreCtividad from Usuarios a"
+                    + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo "
+                    + "\n left join Actividad c on c.IdActividad =  a.IdActividad "
+                    + "\n where a.IdUsuario =  "+_Id;
+            stnt.executeQuery(Consulta);
+            rs = stnt.executeQuery(Consulta);
+            
+            List<VistaUsuarios> ListaUsers = new ArrayList<>();
+            
+            while (rs.next()){
+                int idUsuario = rs.getInt("IdUsuario");
+                String NombreUsuario = rs.getString("Nombre");
+                String EmailUsuario = rs.getString("Email");
+                String TelefonoUsuario = rs.getString("Telefono");
+                String TipoUsuario =rs.getString("NombreTipo");
+                String NombreActividad =rs.getString("NombreCtividad");
+                
+                
+                
+                VistaUsuarios VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario,NombreActividad);
+                
+                ListaUsers.add(VistaUsuarios);
+
+            }
+            
+            rs.close();
+            stnt.close();
+            conexion.close();
+            
+            return ListaUsers;
+            
+        } catch (SQLException ex) {
+            
+            Logger.getLogger(VistaUsuarios.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }   
     }
@@ -90,8 +183,9 @@ public class VistaUsuarios {
             
             Statement stnt = conexion.createStatement();
             ResultSet rs;
-            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo from Usuarios a"
+            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo, c.NombreCtividad from Usuarios a"
                     + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo "
+                    + "\n left join Actividad c on c.IdActividad =  a.IdActividad "
                     + "\n where a.IdUsuario =  " + _Id;
             stnt.executeQuery(Consulta);
             rs = stnt.executeQuery(Consulta);
@@ -99,56 +193,14 @@ public class VistaUsuarios {
             VistaUsuarios VistaUsuarios = null ;
             
             while (rs.next()){
-                int idUsuario = rs.getInt("a.IdUsuario");
-                String NombreUsuario = rs.getString("a.Nombre");
-                String EmailUsuario = rs.getString("a.Email");
-                String TelefonoUsuario = rs.getString("a.Telefono");
-                String TipoUsuario =rs.getString("b.NombreTipo");
+                int idUsuario = rs.getInt("IdUsuario");
+                String NombreUsuario = rs.getString("Nombre");
+                String EmailUsuario = rs.getString("Email");
+                String TelefonoUsuario = rs.getString("Telefono");
+                String TipoUsuario =rs.getString("NombreTipo");
+                String NombreActividad =rs.getString("NombreCtividad");
                 
-                VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario);
-                
-
-            }
-            
-            rs.close();
-            stnt.close();
-            conexion.close();
-            
-            return VistaUsuarios;
-            
-        } catch (SQLException ex) {
-            
-            Logger.getLogger(TipoUsuariosSQL.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }   
-    }
-    
-    public VistaUsuarios MostrarUsuarios (String Nombre ){
-       
-        try {
-            
-            
-            Connection conexion = Conexion.getConection();
-            
-            
-            Statement stnt = conexion.createStatement();
-            ResultSet rs;
-            String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo from Usuarios a"
-                    + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo "
-                    + "\n where a.Nombre like  '"+Nombre+"%'";
-            stnt.executeQuery(Consulta);
-            rs = stnt.executeQuery(Consulta);
-            
-            VistaUsuarios VistaUsuarios = null ;
-            
-            while (rs.next()){
-                int idUsuario = rs.getInt("a.IdUsuario");
-                String NombreUsuario = rs.getString("a.Nombre");
-                String EmailUsuario = rs.getString("a.Email");
-                String TelefonoUsuario = rs.getString("a.Telefono");
-                String TipoUsuario =rs.getString("b.NombreTipo");
-                
-                VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario);
+                VistaUsuarios = new VistaUsuarios(idUsuario, NombreUsuario,EmailUsuario,TelefonoUsuario,TipoUsuario,NombreActividad);
                 
 
             }
@@ -161,7 +213,7 @@ public class VistaUsuarios {
             
         } catch (SQLException ex) {
             
-            Logger.getLogger(TipoUsuariosSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VistaUsuarios.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }   
     }
@@ -205,4 +257,16 @@ public class VistaUsuarios {
     public void setTipoUsuario(String TipoUsuario) {
         this.TipoUsuario = TipoUsuario;
     }
+
+    public String getNombreActividad() {
+        return NombreActividad;
+    }
+
+    public void setNombreActividad(String NombreActividad) {
+        this.NombreActividad = NombreActividad;
+    }
+    
+    
+
+    
 }

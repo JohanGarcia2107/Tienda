@@ -4,15 +4,12 @@
  */
 package MetodosSQL;
 
-import ClasesParaVistas.VistaUsuarios;
 import Modelos.Administrador;
 import Sql.Conexion;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,7 +35,7 @@ public class AdministradorSQL {
             
             Connection conexion = Conexion.getConection();
             String Insert = "insert into usuarios (Nombre,Email,Telefono,Contraseña,IdTipo) "
-                    + "values('"+NombreUsuario+"','"+EmailUsuario+"','"+TelefonoUsuario+"','"+ContraseñaUsuario+"','"+IdTipoUsuario+"')";
+                    + "values('"+NombreUsuario+"','"+EmailUsuario+"','"+TelefonoUsuario+"','"+ContraseñaUsuario+"',"+IdTipoUsuario+")";
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Insert);
 
@@ -59,7 +56,7 @@ public class AdministradorSQL {
         try {
             
             Connection conexion = Conexion.getConection();
-            String Sesion = "select * from usuarios \n where (Nombre = '"+ Usuario+"') and (Contraseña ='"+Contraseña+"')";
+            String Sesion = "select * from usuarios \n where (Nombre = '"+ Usuario+"') and (Contraseña ='"+Contraseña+"') and (IdTipo = 1)";
             Statement stnt = conexion.createStatement();
             ResultSet rs = stnt.executeQuery(Sesion);
             int i=0;
@@ -91,7 +88,8 @@ public class AdministradorSQL {
         try {
             
             Connection conexion = Conexion.getConection();
-            String Delete = "delete \n from usuarios \n where IdUsuario = "+ Id;
+            String Delete = "update tipousuarios \n set IdActividad = 2 "+
+                    "' \n where IdUsuario = "+Id ;
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Delete);
 

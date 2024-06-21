@@ -77,7 +77,7 @@ public class VisitanteSQL {
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(AdministradorSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VisitanteSQL.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }   
     }
@@ -87,7 +87,8 @@ public class VisitanteSQL {
         try {
             
             Connection conexion = Conexion.getConection();
-            String Delete = "delete \n from usuarios \n where IdUsuario = "+ Id;
+            String Delete = "update tipousuarios \n set IdActividad = 2 "+
+                    "' \n where IdUsuario = "+Id ;
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Delete);
 

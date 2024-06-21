@@ -4,7 +4,7 @@
  */
 package MetodosSQL;
 
-import Modelos.TipoUsuario;
+import Modelos.Categorias;
 import Sql.Conexion;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -16,19 +16,19 @@ import java.util.logging.Logger;
  *
  * @author jdavi
  */
-public class TipoUsuariosSQL {
+public class CategoriasSQL {
     
-    public TipoUsuariosSQL(){
+    public CategoriasSQL(){
     
     }
     
-    public boolean InsertarTipoUsuario(TipoUsuario TipoUsuario){
-        String Nombre = TipoUsuario.getNombreTipo();
+    public boolean InsertarCategoria(Categorias Categorias){
+        String Nombre = Categorias.getNombreCategoria();
         
         try {
             
             Connection conexion = Conexion.getConection();
-            String Insert = "insert into tipousuarios (NombreTipo)"
+            String Insert = "insert into categorias (NombreCategoria)"
                     +"values('"+Nombre+"')";
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Insert);
@@ -40,18 +40,18 @@ public class TipoUsuariosSQL {
             
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(TipoUsuariosSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriasSQL.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }   
     }
     
-    public boolean ActualizarTipoUsuario(int Id, String Nombre){
+    public boolean ActualizarCategorias(int Id, String Nombre){
         
         try {
             
             Connection conexion = Conexion.getConection();
-            String Update = "update tipousuarios \n set NombreTipo = '"+Nombre+
-                    "' \n where IdTipo = "+Id;
+            String Update = "update Categorias \n set NombreCategoria = '"+Nombre+
+                    "' \n where IdCategoria = "+Id;
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Update);
 
@@ -62,18 +62,9 @@ public class TipoUsuariosSQL {
             
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(TipoUsuariosSQL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriasSQL.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }   
     }
     
 }
-    
-
-
-    
-
-
-
-
-

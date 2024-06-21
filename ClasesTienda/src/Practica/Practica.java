@@ -8,6 +8,14 @@ import Modelos.*;
 import MetodosSQL.*;
 import java.util.List;
 import ClasesParaVistas.*;
+import Sql.Conexion;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -74,12 +82,13 @@ public class Practica {
         /*} catch (SQLException ex) {
             Logger.getLogger(Practica.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-           
-        AdministradorSQL a = new AdministradorSQL();
+        
+        
+        VistaUsuarios a = new VistaUsuarios();
         
         
         
-        boolean b = a.InicioDeSesion("Juan Perez","$p@ssw0rd123");
+        List<VistaUsuarios> b = a.ListarUsuarios ();
         
         System.out.println(b);
             
