@@ -46,7 +46,6 @@ public class VistaFactura {
     
     }
         
-    
     public List<VistaFactura> ListarFacturas (){
         
         try {
