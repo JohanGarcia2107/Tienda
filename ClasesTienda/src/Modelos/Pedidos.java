@@ -28,16 +28,6 @@ public class Pedidos {
         this.Fecha=Fecha;
         this.IdEstado=IdEstado;
     }
-    
-    public String VerPedido (int IdFactura){
-    String IdP = Integer.toString(getIdPedido());
-    String IdU = Integer.toString(getIdUsuario());
-    String IdF = Integer.toString(getIdFactura());
-    String MP = Float.toString(getMontoAPagar());
-    String Date = getFecha();
-    String IdE = Integer.toString(getIdEstado());
-        return "El valor del id del pedido es "+IdP+", el Id de usuario es "+IdU+", El id de Factura es "+IdF+", El monto a pagar es "+MP+", su Fecha de entrega es "+Date+"y el Id Usuario es "+IdU ;
-    }
 
     public int getIdPedido() {
         return IdPedido;

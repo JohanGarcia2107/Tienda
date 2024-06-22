@@ -20,15 +20,6 @@ public class DetalleFactura {
         this.IdFactura=IdFactura;
     }
     
-    public String VerDetalleFactura (int IdFactura){
-    String IdPro = Integer.toString(getIdProducto());
-    String P = Float.toString(getPrecio());
-    String C = Integer.toString(getCantidad());;
-    String PT = Float.toString(getPrecioTotal());
-    String IdFac = Integer.toString(getIdFactura());
-        return "El valor del id del producto es "+IdPro+", su Precio es "+P+", su Cantidad es "+C+", su precio total "+PT+", y pertenece a la factura con ID "+IdFac;
-    }
-    
     public DetalleFactura (int IdProducto, int Cantidad, int IdFactura){
         this.IdProducto=IdProducto;
         this.Cantidad=Cantidad;

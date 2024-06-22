@@ -33,18 +33,6 @@ public class Factura {
         this.Fecha=Fecha;
         this.IdUsuario=IdUsuario;
     }
-    
-    public String VerFactura (int IdFactura){
-    String Id = Integer.toString(getIdFactura());
-    String Dir = getDireccion();
-    String MdP = getMedioDePago();
-    String Date = getFecha();
-    String TP = Float.toString(getTotalAPagar());
-    String V = Float.toString(getIVA());
-    String PF = Float.toString(getPagoFinal());
-    String IdU = Integer.toString(getIdUsuario());
-        return "El valor del id de la factura es "+Id+", la direccion es "+Dir+", el medio de pago es "+MdP+", su fecha "+Date+", su Total "+TP+", el iva es igual a "+V+" El pago final es "+PF+"y el Id Usuario es "+IdU ;
-    }
 
     public int getIdFactura() {
         return IdFactura;

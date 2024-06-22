@@ -13,12 +13,6 @@ public class Categorias {
         this.IdCategoria=IdCategoria;
         this.NombreCategoria=NombreCategoria;
     }
-    
-    public String VerCategorias (int IdCategoria){
-        String Id = Integer.toString(getIdCategoria());
-        String Nombre = getNombreCategoria();
-        return "El valor del id de la categoria es "+Id+"y su nombre es "+Nombre ;
-    }
 
     public int getIdCategoria() {
         return IdCategoria;
@@ -36,16 +30,4 @@ public class Categorias {
         this.NombreCategoria = NombreCategoria;
     }
     
-    public boolean ChangeNombreCategoria(String NombreCategoria) {
-        
-         String AntNombreCategoria=getNombreCategoria();
-         String NewNombreCategoria = NombreCategoria;
-         this.NombreCategoria = NombreCategoria;
-         
-         if(NewNombreCategoria==AntNombreCategoria){
-               return false;
-         }else{
-               return true;
-         }
-    }
 }

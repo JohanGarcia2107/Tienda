@@ -13,12 +13,6 @@ public class EstadoPedidos {
         this.IdEstado=IdEstado;
         this.NombreEstado=NombreEstado;
     }
-    
-    public String VerEstadoPedidos (int IdEstado){
-        String Id = Integer.toString(getIdEstado());
-        String Nombre = getNombreEstado();
-        return "El valor del id del Estado es "+Id+"y su nombre es "+Nombre ;
-    }
 
     public int getIdEstado() {
         return IdEstado;
@@ -36,16 +30,4 @@ public class EstadoPedidos {
         this.NombreEstado = NombreEstado;
     }
     
-    public boolean ChangeNombreEstado(String NombreEstado) {
-        
-         String AntNombreEstado=getNombreEstado();
-         String NewNombreEstado = NombreEstado;
-         this.NombreEstado = NombreEstado;
-         
-         if(NewNombreEstado==AntNombreEstado){
-               return false;
-         }else{
-               return true;
-         }
-    }
 }
