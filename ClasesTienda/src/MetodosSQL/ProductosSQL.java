@@ -56,7 +56,7 @@ public class ProductosSQL {
             
             Connection conexion = Conexion.getConection();
             String Delete = "update productos \n set IdActividad = 2 "+
-                    "' \n where Nombre = "+Id ;
+                    " \n where IdProducto = " + Id;
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Delete);
 

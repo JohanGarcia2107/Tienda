@@ -84,13 +84,36 @@ public class Practica {
         }*/
         
         
-        VistaUsuarios a = new VistaUsuarios();
+        /*Productos a = new Productos(0, "NombreProducto", "DirIMGProd", 0, 0, 1);*/
+        ProductosSQL b = new ProductosSQL();
         
+        VistaProductos d = new VistaProductos();
         
+        /*Insert boolean c = b.InsertarProducto(a);*/
         
-        List<VistaUsuarios> b = a.ListarUsuarios ();
+        /*EliminarProducto boolean c = b.EliminarProducto(8);*/
         
-        System.out.println(b);
+        /*Modificar (Nombre en este caso)*/boolean c = b.ModificarNombreProductos(8, "NuevoNombreProducto");
+        
+        /*VerProducto*/d = d.MostrarProductos(8);
+        
+    int IdProducto=d.getIdProducto();
+    String NombreProducto=d.getNombreProducto();
+    String DirIMGProd=d.getDirIMGProd();
+    float Precio=d.getPrecio();
+    int Stock=d.getStock();
+    String Categoria=d.getCategoria();
+    String Actividad=d.getActividad();
+        
+    
+        System.out.println(c);
+        System.out.println("Id = "+IdProducto);
+        System.out.println("Nombre = "+NombreProducto);
+        System.out.println("DirIMG = "+DirIMGProd);
+        System.out.println("Precio = "+Precio);
+        System.out.println("Stock = "+Stock);
+        System.out.println("Categoria = "+Categoria);
+        System.out.println("Actividad = "+Actividad);
             
             
         

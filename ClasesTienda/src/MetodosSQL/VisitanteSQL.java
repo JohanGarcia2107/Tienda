@@ -88,7 +88,7 @@ public class VisitanteSQL {
             
             Connection conexion = Conexion.getConection();
             String Delete = "update tipousuarios \n set IdActividad = 2 "+
-                    "' \n where IdUsuario = "+Id ;
+                    " \n where IdUsuario = "+Id ;
             Statement stnt = conexion.createStatement();
             stnt.executeUpdate(Delete);
 

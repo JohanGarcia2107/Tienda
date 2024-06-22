@@ -27,6 +27,62 @@ public class VistaProductos {
     private int Stock;
     private String Categoria;
     private String Actividad;
+
+    public int getIdProducto() {
+        return IdProducto;
+    }
+
+    public void setIdProducto(int IdProducto) {
+        this.IdProducto = IdProducto;
+    }
+
+    public String getNombreProducto() {
+        return NombreProducto;
+    }
+
+    public void setNombreProducto(String NombreProducto) {
+        this.NombreProducto = NombreProducto;
+    }
+
+    public String getDirIMGProd() {
+        return DirIMGProd;
+    }
+
+    public void setDirIMGProd(String DirIMGProd) {
+        this.DirIMGProd = DirIMGProd;
+    }
+
+    public float getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(float Precio) {
+        this.Precio = Precio;
+    }
+
+    public int getStock() {
+        return Stock;
+    }
+
+    public void setStock(int Stock) {
+        this.Stock = Stock;
+    }
+
+    public String getCategoria() {
+        return Categoria;
+    }
+
+    public void setCategoria(String Categoria) {
+        this.Categoria = Categoria;
+    }
+
+    public String getActividad() {
+        return Actividad;
+    }
+
+    public void setActividad(String Actividad) {
+        this.Actividad = Actividad;
+    }
     
     public VistaProductos() {
 
@@ -111,8 +167,8 @@ public class VistaProductos {
                 String DirIMGProd = rs.getString("DireccionIMGProd");
                 float Precio = rs.getInt("Precio");
                 int Stock = rs.getInt("Stock");
-                String Categoria = rs.getString("Nombre");
-                String Actividad = rs.getString("Nombre");
+                String Categoria = rs.getString("Categoria");
+                String Actividad = rs.getString("NombreCtividad");
                 
                 
                 
@@ -145,7 +201,7 @@ public class VistaProductos {
                               "from Productos a\n" +
                               "join Categorias b on a.IdCategoria=b.IdCategoria\n" +
                               "join Actividad c on a.IdActividad=c.IdActividad;"
-                              + "\n where a.Nombre =  '"+Nombre+"%'";
+                              + "\n where a.Nombre like  '"+Nombre+"%'";
             stnt.executeQuery(Consulta);
             rs = stnt.executeQuery(Consulta);
             

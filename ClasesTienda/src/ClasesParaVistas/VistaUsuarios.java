@@ -93,7 +93,7 @@ public class VistaUsuarios {
             String Consulta = "select a.IdUsuario, a.Nombre, a.Email, a.Telefono, b.NombreTipo, c.NombreCtividad from Usuarios a"
                     + "\n left join TipoUsuarios b on a.IdTipo =  b.IdTipo "
                     + "\n left join Actividad c on c.IdActividad =  a.IdActividad "
-                    + "\n where a.Nombre =  '"+Nombre+"%'";
+                    + "\n where a.Nombre like  '"+Nombre+"%'";
             stnt.executeQuery(Consulta);
             rs = stnt.executeQuery(Consulta);
             

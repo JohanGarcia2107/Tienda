@@ -42,6 +42,11 @@ public class VistaFactura {
         this.PagoFinalFactura = PagoFinalFactura;
     }
     
+    public VistaFactura() {
+    
+    }
+        
+    
     public List<VistaFactura> ListarFacturas (){
         
         try {
@@ -155,7 +160,7 @@ public class VistaFactura {
                               "join Factura b on a.IdFactura=b.IdFactura\n" +
                               "join Productos c on a.IdProducto=c.IdProducto\n" +
                               "join Usuarios d on b.IdUsuario=d.IdUsuario\n" +
-                              "where d.Nombre =  '"+Nombre+"%'"+
+                              "where d.Nombre like  '"+Nombre+"%'"+
                               "\n order by a.IdFactura;";
             stnt.executeQuery(Consulta);
             rs = stnt.executeQuery(Consulta);
@@ -194,8 +199,6 @@ public class VistaFactura {
         }   
     }
     
-    public VistaFactura() {
-    }
 
     public int getIdFactura() {
         return IdFactura;
