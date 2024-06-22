@@ -27,6 +27,54 @@ public class VistaPedidos {
     private String Direccion;
     private String NombreEstado;
 
+    public int getIdFactura() {
+        return IdFactura;
+    }
+
+    public void setIdFactura(int IdFactura) {
+        this.IdFactura = IdFactura;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public float getMontoAPagar() {
+        return MontoAPagar;
+    }
+
+    public void setMontoAPagar(float MontoAPagar) {
+        this.MontoAPagar = MontoAPagar;
+    }
+
+    public String getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
+    public String getNombreEstado() {
+        return NombreEstado;
+    }
+
+    public void setNombreEstado(String NombreEstado) {
+        this.NombreEstado = NombreEstado;
+    }
+
     public VistaPedidos(int IdFactura, String Nombre, float MontoAPagar, String Fecha, String Direccion, String NombreEstado) {
         this.IdFactura = IdFactura;
         this.Nombre = Nombre;
