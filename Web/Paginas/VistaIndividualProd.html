@@ -15,26 +15,26 @@
                     <img src="../IMGs/Logo.png" class="logo" alt="logo">
             </div>
             <label class="ControlMenu C1">
-                <input class="DisplayMenu D1" type="radio" name="Manejador" id="abrir" checked>
+                <input class="DisplayMenu D1" type="radio" name="Manejador" id="abrir">
                 <span class="material-symbols-outlined">Menu</span>
             </label>
             <label class="ControlMenu C2">
-                <input class="DisplayMenu D2" type="radio" name="Manejador" id="cerrar" >
+                <input class="DisplayMenu D2" type="radio" name="Manejador" id="cerrar" checked>
                 <span class="material-symbols-outlined">Close</span>
             </label>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="../index.php"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
-                    <li class="menu_item"><a href="Productos.php"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
-                    <li class="menu_item"><a href="../index.php#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
-                    <li class="menu_item"><a href="../index.php#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
-                    <li class="menu_item"><a href="../index.php#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
+                    <li class="menu_item"><a href="../index.html"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
+                    <li class="menu_item"><a href="Productos.html"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
+                    <li class="menu_item"><a href="../index.html#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
+                    <li class="menu_item"><a href="../index.html#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
+                    <li class="menu_item"><a href="../index.html#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
                 </ul>
             </nav>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="#"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
-                    <li class="menu_item"><a href="#"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
+                    <li class="menu_item"><a href="Perfil.html"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
+                    <li class="menu_item"><a href="InicioSesion.html"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
                 </ul>
             </nav>
         </div>
@@ -42,10 +42,6 @@
     <div class="Contenido">
     <header>
         <div  class="Logotipo2">
-            <form class="BarraBusqueda" action="" method="">
-                <input class="Input_Search" type="search" name="Buscar" placeholder="Buscar...">
-                <button class="Buscar" type="submit"><span class="material-symbols-outlined">search</span></button>
-            </form>
             <img class="LogoTipoIMG2" src="../IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
         <div class="Carrito">
@@ -53,6 +49,9 @@
                 <input type="checkbox" class="ManejadorCarrito" name="ManejadorCarrito" id="ManejadorCarrito">
                 <span class="material-symbols-outlined">Shopping_cart</span><i>Carrito de compra</i>
             </label>
+            <button class="RealizarCompra">
+                <a href="ConfirmarPedido.html">RealizarCompra</a>
+            </button>
             <table class="Pedido">
                 <thead class="Detalles">
                     <tr class="FilaDetalles">
@@ -75,29 +74,39 @@
     </header>
 <section class="VProducto">
     <div class="VisionProducto">
-            <div class="VPImgContainer">
-                <img src="IMGs/Doc5.png" class="profile_image">
-            </div>
-        <div class="Nombre">
-            <h2>
-                ¿Quienes somos?
-            </h2>
+        <div class="VPImgContainer">
+            <img class="prod_image" src="../IMGs/1.jpg" >
         </div>
-            <div class="Info">
-                <div class="PrecioYStock">
-                    <div>
-                        <p>Precio</p>
-                    </div>
-                    <div>
-                        <p>Stock</p>
-                    </div>
-                </div>
-                <div class="+Carrito">
-                    <div>
-                        <p><span class="material-symbols-outlined">Add_Shopping_Cart</span></p>
-                    </div>
-                </div>
+        <div class="InfoProd">
+            <div class="NombreProd">
+                <h2>
+                    Copa Champions
+                </h2>
+                <p class="DescripcionProd">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ad recusandae natus sapiente quae iusto dignissimos mollitia iure assumenda velit. Voluptatibus vero at accusamus velit quaerat. Minima at ipsa labore!
+                </p>
             </div>
+                <div class="Detalles">
+                    <div class="PrecioYStock">
+                        <div>
+                            <p>Precio</p>
+                        </div>
+                        <div>
+                            <p>Stock</p>
+                        </div>
+                    </div>
+                    <div >
+                        <div>
+                            <form class="MasCarrito" action="Carrito">
+                                <label for="Cantidad"> Cantidad a comprar
+                                    <input type="number" value="1" name="Cantidad" class="Cantidad" >
+                                </label>
+                                <input class="ACarrito" type="button" value="Anadir al Carrito">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
     </div>
 </section>
     <footer>

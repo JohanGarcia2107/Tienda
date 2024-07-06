@@ -57,6 +57,10 @@ p a{
     text-decoration: none;
 }
 
+img{
+    max-width: 100%;
+}
+
 /*-------------------side_bar--------------------*/
 
 .Side_bar {
@@ -468,7 +472,8 @@ h1{
 .input_send, .input_contact, .label_contact{
     width: 100% ;
     font-family: inherit;
-
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .label_contact{
@@ -625,6 +630,11 @@ td{
     box-shadow: 0 0 8px black;
 }
 
+.RealizarCompra{
+    border-radius: 5px;
+    padding: 2px;
+}
+
 .Productos{
     width: 100%;
     margin: auto;
@@ -680,8 +690,263 @@ td{
 }
 
 /*---------------------------------------------------Vista Individual Productos --------------------------------------------------*/
+.VProducto{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    padding: 50px;
+    
+}
+
+.VisionProducto{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 20px;
+
+}
+
+.VPImgContainer{
+    max-width: 500px;
+}
+
+.prod_image{
+    border-radius: 20px;
+}
+
+.InfoProd{
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-height: 80%;
+    justify-content: space-around;
+}
+
+.Nombre{
+    padding: 10px;
+}
+
+.Detalles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.PrecioYStock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.MasCarrito{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.ACarrito{
+    background-color: #d467de;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.Cantidad{
+    width: 80%;
+}
+
+.NombreProd{
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+
+/*Inicio de sesion*/
+
+.InicioSesionContainer{
+    width: 100%;
+    padding: 10px;
+}
+
+.InicioDeSesion{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
 
 
+.InSe{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: var(--third-color);
+    margin: auto;
+    max-width: 100%;
+    padding: 20px 25px;
+    margin-top: 3rem;
+}
+
+.TituloForm, .optionForm, .InputForm{
+    font-size: 1.3rem;
+    border-radius: 15px;
+    padding: 0.3rem;
+}
+
+.optionForm, .InputForm{
+    width: 100%;
+    min-width: 100%;
+}
+
+select{
+    border-radius: 15px;
+    padding: 0.3rem;
+}
+
+.TituloForm, .optionForm, .InputForm, .SendForm{
+    width: 80%;
+}
+
+.SendForm{
+    align-self: center;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.optionForm:active, .InputForm:active, .SendForm:active{
+    opacity: 0.8;
+    outline: 2px solid rgba(147, 31, 215, 0.746);
+}
+
+.Reg{
+    text-wrap: wrap;
+}
+
+.Terms{
+    display: flex;
+    gap: 5px;
+    font-size: 1.1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Cond{
+    width: 50px;
+}
+
+/*Perfil*/
+.ActualizarDatos{
+    border-radius: 20px;
+    padding: 5px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    min-width: 100%;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+/*Ver Factura*/
+
+.TableContainer{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.Listado{
+    background-color: var(--third-color);
+    border: 5px solid var(--principal-color);
+    padding: 10px;
+}
+
+.Encabezado, .ItemList{
+    border: none;
+    text-align: center;
+    padding: 0 10px;
+    text-wrap: wrap;
+    color: var(--principal-color);
+}
+
+.ItemList{
+    border-top: 1px solid var(--principal-color);
+    color: var(--four-color);
+}
+
+.BotonDetalles{
+    border: none;
+    border-top: 1px solid var(--principal-color);
+}
+
+.EstiloBotonDetalles{
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--four-color);
+    color: var(--third-color);
+    font-weight: bold;
+}
+
+.EstiloBotonDetalles:hover{
+    opacity: 0.7;
+}
+
+.EstiloBotonDetalles:active{
+    outline: 5px solid var(--secondary-color);
+}
+
+.Botones{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ContenedorInsert{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.EstiloBotonInsert{
+    padding: 10px;
+    max-width: 100%;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-color: var(--principal-color);
+    color: var(--third-color);
+    transition: color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.EstiloBotonInsert:hover{
+    background-color: var(--third-color);
+    color: var(--principal-color);
+}
+
+.EstiloBotonInsert:active{
+    outline: 2px solid var(--secondary-color);
+}
 
 @media screen and (max-width:720px ) {
     
@@ -822,5 +1087,27 @@ td{
         flex-direction: row;
         justify-content: space-between;
         padding-right: 0;
+    }
+
+    .VisionProducto{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .InfoProd{
+        min-height: auto;
+    }
+
+    .Detalles{
+        margin-top: 25px;
+    }
+
+    .VProducto{
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        padding: 20px;
+        
     }
 }

@@ -5,8 +5,9 @@
         <group>
             <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaFactura.java</file>
             <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaProductos.java</file>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/Practica/Practica.java</file>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/MetodosSQL/PedidosSQL.java</file>
+            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/MetodosSQL/AdministradorSQL.java</file>
+            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/MetodosSQL/FacturaSQL.java</file>
+            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaUsuarios.java</file>
             <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaPedidos.java</file>
         </group>
     </open-files>
