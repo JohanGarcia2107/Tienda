@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaFactura.java</file>
             <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaProductos.java</file>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/MetodosSQL/AdministradorSQL.java</file>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/MetodosSQL/FacturaSQL.java</file>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaUsuarios.java</file>
-            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/ClasesParaVistas/VistaPedidos.java</file>
+            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/Sql/Conexion.java</file>
+            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/Modelos/Productos.java</file>
+            <file>file:/C:/Users/jdavi/Desktop/Tiendita/ClasesTienda/src/MetodosSQL/ProductosSQL.java</file>
         </group>
     </open-files>
 </project-private>
