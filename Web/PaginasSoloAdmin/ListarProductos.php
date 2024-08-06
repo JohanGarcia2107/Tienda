@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Usuarios</title>
+    <title>Listado de Productos</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="icon" href="../IMGs/Logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -24,17 +24,17 @@
             </label>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="../index.html"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
-                    <li class="menu_item"><a href="../Paginas/Productos.html"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
-                    <li class="menu_item"><a href="../index.html#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
-                    <li class="menu_item"><a href="../index.html#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
-                    <li class="menu_item"><a href="../index.html#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
+                    <li class="menu_item"><a href="../index.php"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
+                    <li class="menu_item"><a href="../Paginas/Productos.php"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
+                    <li class="menu_item"><a href="../index.php#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
+                    <li class="menu_item"><a href="../index.php#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
+                    <li class="menu_item"><a href="../index.php#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
                 </ul>
             </nav>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="../Paginas/Perfil.html"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
-                    <li class="menu_item"><a href="../Paginas/InicioSesion.html"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
+                    <li class="menu_item"><a href="../Paginas/Perfil.php"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
+                    <li class="menu_item"><a href="../Paginas/InicioSesion.php"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
                 </ul>
             </nav>
         </div>
@@ -51,9 +51,9 @@
         </div>
     </header>
     <div class="ContenedorInsert">
-        <a href="InsertarUsuario.html">
+        <a href="InsertarProducto.php">
             <button class="EstiloBotonInsert">
-                Insertar nuevo Usuario
+                Insertar nuevo producto
             </button>
         </a>
     </div>
@@ -62,14 +62,13 @@
                     <table class="Listado">
                         <thead class="Encabezados">
                             <tr class="FilaEncabezados">
-                                <th class="Encabezado">IdUsuario</th>
+                                <th class="Encabezado">IdProducto</th>
+                                <th class="Encabezado">Dirección IMG Prod</th>
                                 <th class="Encabezado">Nombre</th>
-                                <th class="Encabezado">Email</th>
-                                <th class="Encabezado">Telefono</th>
-                                <th class="Encabezado">Contraseña</th>
-                                <th class="Encabezado">Tipo</th>
-                                <th class="Encabezado">Actividad</th>
+                                <th class="Encabezado">Precio</th>
+                                <th class="Encabezado">Stock</th>
                                 <th class="Encabezado">Editar</th>
+                                <th class="Encabezado">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody class="ContenidoListados">
@@ -78,20 +77,18 @@
                             <td class="ItemList">a</td>
                             <td class="ItemList">a</td>
                             <td class="ItemList">a</td>
-                            <td class="ItemList">a</td>
-                            <td class="ItemList">a</td>
                             <td class="BotonDetalles">
-                                <a href="EditarUsuario.html">
+                                <a href="EditarProductos.php">
                                     <button class="EstiloBotonDetalles">
                                         Editar
                                     </button>
                                 </a>
                             </td>
                             <td class="BotonDetalles">
-                                <button class="EstiloBotonDetalles">
-                                    Eliminar
-                                </button>
-                        </td>
+                                    <button class="EstiloBotonDetalles">
+                                        Desactivar
+                                    </button>
+                            </td>
                         </tbody>
                     </table>
                 </div>

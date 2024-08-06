@@ -25,7 +25,7 @@
             <nav class="Menu">
                 <ul class="menu_container">
                     <li class="menu_item"><a href="#Inicio"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
-                    <li class="menu_item"><a href="Paginas/Productos.html"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
+                    <li class="menu_item"><a href="Paginas/Productos.php"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
                     <li class="menu_item"><a href="#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
                     <li class="menu_item"><a href="#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
                     <li class="menu_item"><a href="#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
@@ -33,8 +33,8 @@
             </nav>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="Paginas/Perfil.html"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
-                    <li class="menu_item"><a href="Paginas/InicioSesion.html"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
+                    <li class="menu_item"><a href="Paginas/Perfil.php"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
+                    <li class="menu_item"><a href="Paginas/InicioSesion.php"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
                 </ul>
             </nav>
         </div>
