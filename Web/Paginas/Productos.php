@@ -54,7 +54,7 @@
                 <span class="material-symbols-outlined">Shopping_cart</span><i>Carrito de compra</i>
             </label>
             <button class="RealizarCompra">
-                <a href="ConfirmarPedido.html">RealizarCompra</a>
+                <a href="ConfirmarPedido.php">RealizarCompra</a>
             </button>
             <table class="Pedido">
                 <thead class="Detalles">
