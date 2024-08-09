@@ -24,17 +24,17 @@
             </label>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="../index.html"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
-                    <li class="menu_item"><a href="Productos.html"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
-                    <li class="menu_item"><a href="../index.html#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
-                    <li class="menu_item"><a href="../index.html#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
-                    <li class="menu_item"><a href="../index.html#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
+                    <li class="menu_item"><a href="../index.php"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
+                    <li class="menu_item"><a href="Productos.php"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
+                    <li class="menu_item"><a href="../index.php#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
+                    <li class="menu_item"><a href="../index.php#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
+                    <li class="menu_item"><a href="../index.php#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
                 </ul>
             </nav>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="Perfil.html"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
-                    <li class="menu_item"><a href="InicioSesion.html"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
+                    <li class="menu_item"><a href="Perfil.php"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
+                    <li class="menu_item"><a href="InicioSesion.php"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
                 </ul>
             </nav>
         </div>
@@ -62,21 +62,46 @@
                     
                     
                 </form>
-                <a href="ActualizarDatos.html">
+
+                <div class="Botones">
+
+                <a href="ActualizarDatos.php">
                     <button class="ActualizarDatos">
                         Actualizar Datos
                     </button>
                 </a>
-                <a href="Facturas.html">
+                <a href="Facturas.php">
                     <button class="ActualizarDatos">
                         Facturas
                     </button>
                 </a>
-                <a href="Pedidos.html">
+                <a href="Pedidos.php">
                     <button class="ActualizarDatos">
                         Pedidos
                     </button>
                 </a>
+
+                    <a href="../PaginasSoloAdmin/ListarProductos.php">
+                        <button class="ActualizarDatos">
+                            Productos
+                        </button>
+                    </a>
+                    <a href="../PaginasSoloAdmin/ListarUsuarios.php">
+                        <button class="ActualizarDatos">
+                            Usuarios
+                        </button>
+                    </a>
+                    <a href="../PaginasSoloAdmin/ListarFacturas.php">
+                        <button class="ActualizarDatos">
+                            Facturas
+                        </button>
+                    </a>
+                    <a href="../PaginasSoloAdmin/ListarPedidos.php">
+                        <button class="ActualizarDatos">
+                            Pedidos
+                        </button>
+                    </a>
+                </div>
         </div>
     </div>
 </div>
