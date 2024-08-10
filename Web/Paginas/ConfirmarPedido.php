@@ -44,30 +44,12 @@
         <div  class="Logotipo2">
             <img class="LogoTipoIMG2" src="../IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
-        <div class="Carrito">
-            <label class="CarritoCompra" for="ManejadorCarrito">
-                <input type="checkbox" class="ManejadorCarrito" name="ManejadorCarrito" id="ManejadorCarrito">
-                <span class="material-symbols-outlined">Shopping_cart</span><i>Carrito de compra</i>
-            </label>
-            <table class="Pedido">
-                <thead class="Detalles">
-                    <tr class="FilaDetalles">
-                        <th class="EncabezadoDetalles">Producto</th>
-                        <th class="EncabezadoDetalles">Costo</th>
-                        <th class="EncabezadoDetalles">Unidades</th>
-                    </tr>
-                </thead>
-                <tbody class="ProductosPedido">
-                    
-                </tbody>
-                <tfoot class="TotalProductos">
-                <tr>
-                    <th class="Total">Total</th>
-                    <td class="TotalPrecio" colspan="2"></td>
-                </tr>
-            </tfoot>
-            </table>
-        </div>
+        <a class="Confirm" href="ConfirmarPedido.php" role="button">
+            <div class="Carrito">
+            <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>
+            <i class="TextoCarrito">Carrito de compra</i>
+            </div>
+        </a>
     </header>
     <div class="InicioSesionContainer">
         <div class="InicioDeSesion">
@@ -86,8 +68,8 @@
                     <input class="SendForm" type="submit" value="Confirmar compra" >
                 </form>
                 <div class="TableContainer">
-                    <div class="Tables">
-                        <table class="Listado">
+                    <div class="Tables CarritoCompra">
+                        <table class="Listado CarritoPedido">
                             <thead class="Encabezados">
                                 <tr class="FilaEncabezados">
                                     <th class="Encabezado">Producto</th>

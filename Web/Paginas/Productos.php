@@ -48,33 +48,11 @@
             </form>
             <img class="LogoTipoIMG2" src="../IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
-        <div class="Carrito">
-            <label class="CarritoCompra" for="ManejadorCarrito">
-                <input type="checkbox" class="ManejadorCarrito" name="ManejadorCarrito" id="ManejadorCarrito">
-                <span class="material-symbols-outlined">Shopping_cart</span><i>Carrito de compra</i>
-            </label>
-            <button class="RealizarCompra">
-                <a href="ConfirmarPedido.php">RealizarCompra</a>
-            </button>
-            <table class="Pedido">
-                <thead class="Detalles">
-                    <tr class="FilaDetalles">
-                        <th class="EncabezadoDetalles">Producto</th>
-                        <th class="EncabezadoDetalles">Costo</th>
-                        <th class="EncabezadoDetalles">Unidades</th>
-                    </tr>
-                </thead>
-                <tbody class="ProductosPedido">
-                    
-                </tbody>
-                <tfoot class="TotalProductos">
-                <tr>
-                    <th class="Total">Total</th>
-                    <td class="TotalPrecio" colspan="2"></td>
-                </tr>
-            </tfoot>
-            </table>
-        </div>
+        <a href="ConfirmarPedido.php">
+            <div class="Carrito">
+            <span class="material-symbols-outlined">Shopping_cart</span><i>Carrito de compra</i>
+            </div>
+        </a>
     </header>
     <section class="Productos">
         <div class="ProductosContainer">
@@ -88,8 +66,34 @@
                         <p class="Precio">Precio</p>
                     </div>
                 </div>
-            </div>
             </a>
+        </div>
+        <div class="ProductosContainer">
+            <a class="r" href="VistaIndividualProd.php">
+                <div class="Prod">
+                    <div class="P1Prod">
+                            <img class="DirIMGProd" src="../IMGs/1.jpg" alt="Producto">
+                            <p class="NombreProd">Copa Champions</p>
+                    </div>
+                    <div class="P2Prod">
+                        <p class="Precio">Precio</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="ProductosContainer">
+            <a class="r" href="VistaIndividualProd.php">
+                <div class="Prod">
+                    <div class="P1Prod">
+                            <img class="DirIMGProd" src="../IMGs/1.jpg" alt="Producto">
+                            <p class="NombreProd">Copa Champions</p>
+                    </div>
+                    <div class="P2Prod">
+                        <p class="Precio">Precio</p>
+                    </div>
+                </div>
+            </a>
+        </div>
     </section>
     <footer>
         <div class="footer_container">

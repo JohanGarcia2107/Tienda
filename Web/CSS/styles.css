@@ -6,6 +6,7 @@
     color: inherit;
     font-style: normal;
     list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -18,7 +19,6 @@ body {
     font-family: "Montserrat";
     background-color: var(--four-color);
     color: rgb(15, 15, 58) ;
-    max-width: 100%;
 }
 
 h1, h2, h2{
@@ -38,7 +38,6 @@ p, select, input, label, textarea{
     width: 100%;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 p a{
@@ -180,7 +179,6 @@ header {
     z-index: 10;
     user-select: none;
     background-color: aliceblue;
-    filter: drop-shadow(0 0 5px rgb(0, 0, 0));
 }
 
 
@@ -228,7 +226,7 @@ h1{
     color: rgb(71, 57, 154);
     padding: 5px ;
     outline: none;
-    max-width: 80%;
+    max-width: 60%;
 }
 
 .Buscar{
@@ -560,38 +558,30 @@ h1{
 
 /*---------------------------------------------------Productos--------------------------------------------------*/
 
+.Confirm{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
 .Carrito{
     user-select: none;
     display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-spacing: 20px;
-    border-radius: 25px;
-    padding: 20px;
-    background-color: transparent;
-    text-decoration: none;
-    z-index: 100;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 200px;
+    font-family: 'Monserrat';
+    font-size: 24px;
+    
 }
 
-.CarritoCompra {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background-color: transparent;
-    padding: 5px;
-    font-weight: bold;
-}
-
-.CarritoCompra span {
+.Carrito .CarritoCompra {
     font-size: 40px;
 }
 
-.ManejadorCarrito{
-    display: none;
+.Carrito .TextoCarrito {
+    font-size: 3rem;
+    text-transform: uppercase;
 }
 
 .Pedido{
@@ -622,20 +612,6 @@ td{
     border: none;
 }
 
-.Carrito:has(.ManejadorCarrito:checked) :is(.Pedido){
-    display:block;
-    z-index: 10;
-}
-
-.Carrito:has(.ManejadorCarrito:checked) {
-    background-color: var(--third-color);
-    box-shadow: 0 0 8px black;
-}
-
-.RealizarCompra{
-    border-radius: 5px;
-    padding: 2px;
-}
 
 .Productos{
     width: 100%;
@@ -1062,21 +1038,8 @@ select{
     .BarraBusqueda{
         padding: 0;
     }
-    
-    .Carrito{
-        user-select: none;
-        display: flex;
-        flex-wrap: wrap;
-        position: static;
-        max-width: 100%;
-        border-radius: 0;
-    }
 
-    .Carrito:has(.ManejadorCarrito:checked) {
-        background-color: var(--third-color);
-        box-shadow: none;
-        border-radius: 0;
-    }
+
 
     .ProductosContainer{
         max-width: 100%;
@@ -1119,4 +1082,6 @@ select{
         padding: 20px;
         
     }
+
+    
 }
