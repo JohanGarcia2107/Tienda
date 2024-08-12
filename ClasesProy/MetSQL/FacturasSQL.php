@@ -1,6 +1,7 @@
 <?php
 require_once("../Conexion/Conexion.php");
 require_once("../ClasesObj/Facturas.php");
+require_once("PedidosSQL.php");
 
 class FacturasSQL{
 
@@ -26,6 +27,8 @@ class FacturasSQL{
             $idFactura = $Conexion->lastInsertId();
             $sentencia=null;
             $Conexion=null;
+
+            PedidosSQL::InsertarPedido($idFactura);
 
 
             return $idFactura; 

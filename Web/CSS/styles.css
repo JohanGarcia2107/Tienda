@@ -173,6 +173,8 @@ display: none;
 header {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     width: 100%;
@@ -567,12 +569,12 @@ h1{
 .Carrito{
     user-select: none;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     font-family: 'Monserrat';
-    font-size: 24px;
-    
 }
 
 .Carrito .CarritoCompra {
@@ -580,8 +582,8 @@ h1{
 }
 
 .Carrito .TextoCarrito {
-    font-size: 3rem;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .Pedido{
@@ -631,6 +633,8 @@ td{
 
 .r{
     text-decoration: none;
+    height: fit-content;
+    width: 100%;
 }
 
 .Prod{
@@ -935,6 +939,10 @@ select{
 
 @media screen and (max-width:720px ) {
 
+    .Contenido2{
+        overflow-x: hidden;
+    }
+
     h2{
         font-size: 30px;
     }
@@ -1043,6 +1051,8 @@ select{
 
     .ProductosContainer{
         max-width: 100%;
+        grid-auto-rows: 250px;
+        gap: 100px;
     }
     
     .Prod{

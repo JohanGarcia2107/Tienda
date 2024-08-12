@@ -9,36 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    <section class="Side_bar">
-        <div class="menus_container">
-            <div class="logo_container">
-                    <img src="../IMGs/Logo.png" class="logo" alt="logo">
-            </div>
-            <label class="ControlMenu C1">
-                <input class="DisplayMenu D1" type="radio" name="Manejador" id="abrir">
-                <span class="material-symbols-outlined">Menu</span>
-            </label>
-            <label class="ControlMenu C2">
-                <input class="DisplayMenu D2" type="radio" name="Manejador" id="cerrar" checked>
-                <span class="material-symbols-outlined">Close</span>
-            </label>
-            <nav class="Menu">
-                <ul class="menu_container">
-                    <li class="menu_item"><a href="../index.php"><span class="material-symbols-outlined">Home</span><i>Inicio</i></a></li>
-                    <li class="menu_item"><a href="Productos.php"><span class="material-symbols-outlined">Shopping_cart</span><i>Compra</i></a></li>
-                    <li class="menu_item"><a href="../index.php#Contacto"><span class="material-symbols-outlined">Mail</span><i>Contactanos</i></a></li>
-                    <li class="menu_item"><a href="../index.php#NuestrosServicios"><span class="material-symbols-outlined">Work</span><i>Nuestros Servicios</i></a></li>
-                    <li class="menu_item"><a href="../index.php#NuestrosTrabajos"><span class="material-symbols-outlined">Design_Services</span><i>Nuestros Trabajos</i></a></li>
-                </ul>
-            </nav>
-            <nav class="Menu">
-                <ul class="menu_container">
-                    <li class="menu_item"><a href="Perfil.php"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
-                    <li class="menu_item"><a href="InicioSesion.php"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
+    <?php
+        require_once("Componentes/Menu.php");
+    ?>
     <div class="Contenido">
     <header>
         <div  class="Logotipo2">
@@ -48,9 +21,10 @@
             </form>
             <img class="LogoTipoIMG2" src="../IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
-        <a href="ConfirmarPedido.php">
+        <a class="Confirm" href="ConfirmarPedido.php" role="button">
             <div class="Carrito">
-            <span class="material-symbols-outlined">Shopping_cart</span><i>Carrito de compra</i>
+            <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>
+            <i class="TextoCarrito">Carrito de compra</i>
             </div>
         </a>
     </header>
@@ -95,12 +69,9 @@
             </a>
         </div>
     </section>
-    <footer>
-        <div class="footer_container">
-            <h4>JG</h4>
-            <h4>Diseñado y desarrollado por Johan Garcia, con el uso de la imagen y marca de "Cubrimagen" &copy; 2024 - Todos los Derechos Reservados</h4>
-        </div>
-    </footer>
+    <?php
+        require_once("Componentes/Footer.php")
+    ?>
 </div>
 </body>
 </html>
