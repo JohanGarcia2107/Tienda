@@ -1,0 +1,17 @@
+{
+    "name": "jdavi/tienda-master",
+    "autoload": {
+        "psr-4": {
+            "Jdavi\\TiendaMaster\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JohanGarcia2107",
+            "email": "jdavid3mon@gmail.com"
+        }
+    ],
+    "require": {
+        "zytzagoo/smtp-validate-email": "^1.1"
+    }
+}
