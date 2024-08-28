@@ -22,32 +22,36 @@
     <div class="InicioSesionContainer">
         <div class="InicioDeSesion">
 
-                <form class="InSe" action="NewUserAdController.php" method="post">
+                <form class="InSe" action="InsertarUsuario.php" method="post">
                     <h2>Registro de usuarios por medio del ADMIN</h2>
-                    <label class="TituloForm" for="Tipo_de_Usuario">Tipo de Usuario</label>
-                    <select class="SelectForm" name="Tipo_de_Usuario" id="Tipo_de_Usuario">
-                        <option class="optionForm" value="Visitante">Visitante</option>
-                        <option class="optionForm" value="Administrador">Administrador</option>
+                    <?php if ($Salida!=null) {
+                        echo "$Salida";
+                        echo "$Salida2";
+                    } ?>
+                    <label class="TituloForm" for="InsertarUsuarioTipodeUsuario">Tipo de Usuario</label>
+                    <select class="SelectForm" name="InsertarUsuarioTipodeUsuario" id="InsertarUsuarioTipodeUsuario">
+                        <option class="optionForm" value="2">Visitante</option>
+                        <option class="optionForm" value="1">Administrador</option>
                     </select>
 
-                    <label class="TituloForm" for="Nombre">Nombre de Usuario</label>
-                        <input class="InputForm" type="text" name="Nombre" id="Nombre" placeholder="Juan Perez" required>
+                    <label class="TituloForm" for="InsertarUsuarioNombre">Nombre de Usuario</label>
+                        <input class="InputForm" type="text" name="InsertarUsuarioNombre" id="InsertarUsuarioNombre" placeholder="Juan Perez" required>
 
-                        <label class="TituloForm" for="Email">Email</label>
-                        <input class="InputForm" type="email" name="Email" id="Email" placeholder="example@mail.com" required>
+                        <label class="TituloForm" for="InsertarUsuarioEmail">Email</label>
+                        <input class="InputForm" type="email" name="InsertarUsuarioEmail" id="InsertarUsuarioEmail" placeholder="example@mail.com" required>
 
-                        <label class="TituloForm" for="Telefono">Telefono</label>
-                        <input class="InputForm" type="number" name="Telefono" id="Telefono" placeholder="123456789101" required>
+                        <label class="TituloForm" for="InsertarUsuarioTelefono">Telefono</label>
+                        <input class="InputForm" type="number" name="InsertarUsuarioTelefono" id="InsertarUsuarioTelefono" placeholder="123456789101" required>
                     
-                    <label class="TituloForm" for="Contraseña"> Contraseña</label>
-                        <input class="InputForm" type="text" name="Contraseña" id="Contraseña" required>
+                    <label class="TituloForm" for="InsertarUsuarioContraseña"> Contraseña</label>
+                        <input class="InputForm" type="text" name="InsertarUsuarioContraseña" id="InsertarUsuarioContraseña" required>
 
-                        <label class="TituloForm" for="Contraseña"> Vuelve a ingresar tu contraseña</label>
-                        <input class="InputForm" type="password" name="Contraseña" id="Contraseña" required>
+                        <label class="TituloForm" for="InsertarUsuarioContraseña2"> Vuelve a ingresar tu contraseña</label>
+                        <input class="InputForm" type="password" name="InsertarUsuarioContraseña2" id="InsertarUsuarioContraseña2" required>
                     
                     <input class="SendForm" type="submit" value="Registrar" >
                     <div class="Terms">  
-                        <a href="#">Acepto los terminos y condiciones</a><input class="Cond" type="checkbox" name="terminos" id="terminos">
+                        <a href="#">Acepto los terminos y condiciones</a><input class="Cond" type="checkbox" name="terminos" id="terminos" required>
                     </div>
                     
                         

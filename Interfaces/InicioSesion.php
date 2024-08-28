@@ -9,9 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    <?php
-        require_once("Componentes/Menu.php");
-    ?>
     <div class="Contenido">
     <header>
         <h1>CUBRIMAGEN</h1>
@@ -22,14 +19,19 @@
     <div class="InicioSesionContainer">
         <div class="InicioDeSesion">
 
-                <form class="InSe" action="InicioSesionController.php" method="post">
+                <form class="InSe" action="InicioSesion.php" method="post">
                     <h2>Inicio de sesión</h2>
+
+                    <?php if ($Salida!=null) {
+                        echo "$Salida";
+                        echo "$Salida2";
+                    } ?>
                     
-                    <label class="TituloForm" for="Mail">Correo</label>
-                        <input class="InputForm" type="email" name="Mail" id="Mail" placeholder="example@gmail.com" required>
+                    <label class="TituloForm" for="MailInicioSesion">Correo</label>
+                        <input class="InputForm" type="email" name="MailInicioSesion" id="MailInicioSesion" placeholder="example@gmail.com" required>
                     
-                    <label class="TituloForm" for="Contraseña"> Contraseña</label>
-                        <input class="InputForm" type="password" name="Contraseña" id="Contraseña" required>
+                    <label class="TituloForm" for="ContrasenaInicioSesion"> Contraseña</label>
+                        <input class="InputForm" type="password" name="ContrasenaInicioSesion" id="ContrasenaInicioSesion" required>
                     
                     <input class="SendForm" type="submit" value="Iniciar Sesion" >
 

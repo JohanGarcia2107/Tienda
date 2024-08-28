@@ -1,21 +1,25 @@
 <?php
 
-require_once("../BaseDatos/Conexion.php");
-require_once("../Modelos/ClasesObj/Usuarios.php");
-require_once("../Modelos/UsuariosSQL.php");
-require '../Modelos/Composer/vendor/autoload.php';
-require_once("../Modelos/Composer/ComprobarMail.php");
+session_start();
+
+$Salida = null;
+$Salida2 = null;
+
+if ($_SESSION['TipoId']  != "1") {
+        header("Location: ../index.php");
+    }
 
 if ($_POST!=null) {
-    $NombreUsusario=$_POST['Nombre'];
-    $Email=$_POST['Email'];
-    $Telefono=$_POST['Telefono'];
-    $Contrasena=$_POST['Contraseña'];
-    $Contrasena2=$_POST['Contraseña2'];
+    $NombreUsusario=$_POST['InsertarUsuarioNombre'];
+    $Email=$_POST['InsertarUsuarioEmail'];
+    $Telefono=$_POST['InsertarUsuarioTelefono'];
+    $TipoId=$_POST['InsertarUsuarioTipodeUsuario'];
+    $Contrasena=$_POST['InsertarUsuarioContraseña'];
+    $Contrasena2=$_POST['InsertarUsuarioContraseña2'];
     if(ComprobarMail::VerificarSiMailExiste($Email)){
         if ($Contrasena==$Contrasena2) {
-            $Usuario = new Usuarios(null,$NombreUsusario, $Email, $Telefono, $Contrasena);
-            $ConfirmacionRegistro = UsuarioSQL::Registro($Usuario);
+            $Usuario = new Usuarios(null,$NombreUsusario, $Email, $Telefono, $Contrasena, $TipoId);
+            $ConfirmacionRegistro = UsuarioSQL::InsertarUsuario($Usuario);
             if ($ConfirmacionRegistro=="Registro Exitoso") {
                 $Salida = "<script> alert('Registro exitoso, ya puedes iniciar sesión')</script>";
                 $Salida2 = "<p> Registro exitoso, ya puedes iniciar sesión </p>";
@@ -31,7 +35,7 @@ if ($_POST!=null) {
         }
     }else{
         $Salida ="<script> alert('El mail usado no existe, asegurese de que este escrito correctamente o que la direccion sea valida')</script>";
-        $Salida2 = "<p> La confirmacion de la contraseña es diferente de la contraseña iya registrado</p>";
+        $Salida2 = "<p> El mail usado no existe, asegurese de que este escrito correctamente o que la direccion sea valida </p>";
     }
 }
 

@@ -24,13 +24,13 @@
     
                     <form class="InSe" action="" method="post" >
                         <label class="TituloForm" for="Nombre">Nombre de Usuario</label>
-                            <input class="InputForm" type="text" name="Nombre" id="Nombre" placeholder="Juan Perez" readonly>
+                            <input class="InputForm" type="text" name="Nombre" id="Nombre" value="<?php echo $Nombre ?>" readonly>
 
                         <label class="TituloForm" for="Email">Email</label>
-                            <input class="InputForm" type="email" name="Email" id="Email" placeholder="example@mail.com" readonly>
+                            <input class="InputForm" type="email" name="Email" id="Email" value="<?php echo $Email ?>" readonly>
 
                         <label class="TituloForm" for="Telefono">Telefono</label>
-                            <input class="InputForm" type="number" name="Telefono" id="Telefono" placeholder="123456789101" required>
+                            <input class="InputForm" type="number" name="Telefono" id="Telefono" value="<?php echo $Telefono ?>" required>
 
                         <label class="TituloForm" for="Contraseña"> Contraseña</label>
                             <input class="InputForm" type="text" name="Contraseña" id="Contraseña" required>

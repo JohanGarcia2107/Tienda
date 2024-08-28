@@ -55,11 +55,10 @@ class UsuarioSQL{
             $sentencia->bindParam(':IdTipo', $TipoId);
             
             if ($sentencia->execute()) {
-                return true;
+                return "Registro Exitoso";
             }else{
                 $e=new PDOException;
-                echo 'Error: ' . $e->getMessage();
-                return false;
+                return $e;
             }
 
 
@@ -67,7 +66,6 @@ class UsuarioSQL{
             $Conexion=null;
             return true;
         } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
             return false;
         }
 
@@ -100,7 +98,7 @@ class UsuarioSQL{
 
                 return $Usuario;
             }else{
-                return false;
+                return "Usuario inexistente";
             }
 
 

@@ -18,6 +18,12 @@ class Comprobaciones{
         return $FechaFutura;
     }
 
+    public static function Vacios ($Input){
+        $cadenaLimpia = trim($Input);
+        // Verifica si la cadena resultante está vacía
+        return !(empty($cadenaLimpia));
+    }
+
     public static function ActualizacionCamposVacios($IdFactura){
         $IdFactura=$IdFactura;
         try {

@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,8 +38,14 @@
             </nav>
             <nav class="Menu">
                 <ul class="menu_container">
-                    <li class="menu_item"><a href="Vistas/Perfil.php"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
-                    <li class="menu_item"><a href="Vistas/InicioSesion.php"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesion</i></a></li>
+                    
+                    <?php if ($_SESSION) { ?>
+                        <li class="menu_item"><a href="Vistas/Perfil.php"><span class="material-symbols-outlined">Person</span><i>Perfil</i></a></li>
+                        <li class="menu_item"><a href="Vistas/CerrarSesion.php"><span class="material-symbols-outlined">Logout</span><i>Cerrar Sesión</i></a></li>
+                    <?php }else { ?>
+                        <li class="menu_item"><a href="Vistas/InicioSesion.php"><span class="material-symbols-outlined">Login</span><i>Iniciar Sesión</i></a></li>
+                    <?php } ?>
+                    
                 </ul>
             </nav>
         </div>

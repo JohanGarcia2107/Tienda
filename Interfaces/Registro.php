@@ -21,31 +21,31 @@
         <div class="InicioDeSesion">
                 <form class="InSe" action="Registro.php" method="post">
                     <h2>Registro</h2>
-                    <?php if ($_POST!=null) {
+                    <?php if ($Salida!=null) {
                         echo "$Salida";
                         echo "$Salida2";
                     } ?>
-                    <label class="TituloForm" for="Nombre">Nombre de Usuario</label>
-                        <input class="InputForm" type="text" name="Nombre" id="Nombre" placeholder="Juan Perez" required>
+                    <label class="TituloForm" for="NombreRegistro">Nombre de Usuario</label>
+                        <input class="InputForm" type="text" name="NombreRegistro" id="NombreRegistro" placeholder="Juan Perez" required>
 
-                        <label class="TituloForm" for="Email">Email</label>
-                        <input class="InputForm" type="email" name="Email" id="Email" placeholder="example@mail.com" required>
+                        <label class="TituloForm" for="EmailRegistro">Email</label>
+                        <input class="InputForm" type="email" name="EmailRegistro" id="EmailRegistro" placeholder="example@mail.com" required>
 
-                        <label class="TituloForm" for="Telefono">Telefono</label>
-                        <input class="InputForm" type="number" name="Telefono" id="Telefono" placeholder="123456789101" required>
+                        <label class="TituloForm" for="TelefonoRegistro">Telefono</label>
+                        <input class="InputForm" type="number" name="TelefonoRegistro" id="TelefonoRegistro" placeholder="123456789101" required>
                     
-                    <label class="TituloForm" for="Contraseña"> Contraseña</label>
-                        <input class="InputForm" type="password" name="Contraseña" id="Contraseña" required>
+                    <label class="TituloForm" for="ContraseñaRegistro"> Contraseña</label>
+                        <input class="InputForm" type="password" name="ContraseñaRegistro" id="ContraseñaRegistro" required>
 
-                        <label class="TituloForm" for="Contraseña"> Vuelve a ingresar tu contraseña</label>
-                        <input class="InputForm" type="password" name="Contraseña2" id="Contraseña" required>
+                        <label class="TituloForm" for="ContraseñaRegistro"> Vuelve a ingresar tu contraseña</label>
+                        <input class="InputForm" type="password" name="Contraseña2Registro" id="ContraseñaRegistro" required>
                     
                     <input class="SendForm" type="submit" value="Registrarse" >
                     <div class="Terms">  
                         <a href="#">Acepto los terminos y condiciones</a><input class="Cond" required type="checkbox" name="terminos" id="terminos">
                     </div>
                     <p>
-                        ¿Ya tienes una cuenta? <a href="index.html">Inicia sesión</a>
+                        ¿Ya tienes una cuenta? <a href="InicioSesion.php">Inicia sesión</a>
                     </p>
                 </form>
         </div>
