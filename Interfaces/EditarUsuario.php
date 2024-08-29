@@ -22,24 +22,25 @@
     <div class="InicioSesionContainer">
         <div class="InicioDeSesion">
 
-            <form class="InSe" action="" method="post">
-                <label class="TituloForm" for="IdUsuario">Id Usuario</label>
-                    <input class="InputForm" type="number" name="IdUsuario" id="IdUsuario" value="<?php echo $IdUser; ?>" readonly>
+            <form class="InSe" action="EditarUsuario.php?IdUsuario=<?php echo $IdUser; ?>" method="post">
+                
+                <label class="TituloForm" for="EditarUsuarioIdUsuario">Id Usuario</label>
+                    <input class="InputForm" type="number" name="EditarUsuarioIdUsuario" id="EditarUsuarioIdUsuario" value="<?php echo $IdUser; ?>" readonly>
 
-                    <label class="TituloForm" for="Nombre">Nombre de Usuario</label>
-                        <input class="InputForm" type="text" name="Nombre" id="Nombre" value="<?php echo $Nombre; ?>" required>
+                    <label class="TituloForm" for="EditarUsuarioNombre">Nombre de Usuario</label>
+                        <input class="InputForm" type="text" name="EditarUsuarioNombre" id="EditarUsuarioNombre" value="<?php echo $Nombre; ?>" required>
 
-                    <label class="TituloForm" for="Email">Email</label>
-                        <input class="InputForm" type="email" name="Email" id="Email" value="<?php echo $Email; ?>" readonly>
+                    <label class="TituloForm" for="EditarUsuarioEmail">Email</label>
+                        <input class="InputForm" type="email" name="EditarUsuarioEmail" id="EditarUsuarioEmail" value="<?php echo $Email; ?>" readonly>
 
-                    <label class="TituloForm" for="Telefono">Telefono</label>
-                        <input class="InputForm" type="number" name="Telefono" id="Telefono" value="<?php echo $Telefono; ?>" required>
+                    <label class="TituloForm" for="EditarUsuarioTelefono">Telefono</label>
+                        <input class="InputForm" type="number" name="EditarUsuarioTelefono" id="EditarUsuarioTelefono" value="<?php echo $Telefono; ?>" required>
 
-                    <label class="TituloForm" for="Contraseña"> Contraseña</label>
-                        <input class="InputForm" type="text" name="Contraseña" id="Contraseña" required>
+                    <label class="TituloForm" for="EditarUsuarioContraseña"> Contraseña</label>
+                        <input class="InputForm" type="password" name="EditarUsuarioContraseña" id="EditarUsuarioContraseña" required>
 
-                    <label class="TituloForm" for="Contraseña"> Vuelve a ingresar la contraseña</label>
-                        <input class="InputForm" type="password" name="Contraseña" id="Contraseña" required>
+                    <label class="TituloForm" for="EditarUsuarioContraseña2"> Vuelve a ingresar la contraseña</label>
+                        <input class="InputForm" type="password" name="EditarUsuarioContraseña2" id="EditarUsuarioContraseña2" required>
                     
                     <input class="SendForm" type="submit" value="Actualizar" >
                     

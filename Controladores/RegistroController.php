@@ -2,7 +2,7 @@
 
 $Salida = null;
 $Salida2 = null;
-if ($_POST!=null) {
+if ($_POST) {
     $NombreUsusario=$_POST['NombreRegistro'];
     $Email=$_POST['EmailRegistro'];
     $Telefono=$_POST['TelefonoRegistro'];
@@ -14,8 +14,8 @@ if ($_POST!=null) {
                 $Usuario = new Usuarios(null,$NombreUsusario, $Email, $Telefono, $Contrasena);
                 $ConfirmacionRegistro = UsuarioSQL::Registro($Usuario);
                 if ($ConfirmacionRegistro=="Registro Exitoso") {
-                    $Salida = "<script> alert('Registro exitoso, ya puedes iniciar sesión')</script>";
-                    $Salida2 = "<p> Registro exitoso, ya puedes iniciar sesión </p>";
+                    echo "<script> alert('Registro exitoso, ya puedes iniciar sesión')</script>";
+                    echo "<script> window.location.href='InicioSesion.php';</script>";
                 }else {
                     $Salida ="<script> alert('Registro fallido, Correo ya registrado o datos faltantes')</script>";
                     $Salida2 = "<p> Registro fallido, Correo ya registrado o datos faltantes </p>";

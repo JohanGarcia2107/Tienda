@@ -80,7 +80,7 @@ class UsuarioSQL{
         try {
             $Conexion=Conexion::getConexion();
 
-            $sentencia = $Conexion->prepare("SELECT * FROM `usuarios` WHERE Email = :Correo AND Contrasena = :Contrasena AND IdActividad = 1;");
+            $sentencia = $Conexion->prepare("SELECT * FROM `usuarios` WHERE Email = :Correo AND Contrasena = :Contrasena;");
             $sentencia->bindParam(':Correo', $Correo);
             $sentencia->bindParam(':Contrasena', $Contrasena);
             
@@ -93,6 +93,7 @@ class UsuarioSQL{
                 $Usuario=new Usuarios();
                 $Usuario->SetIdUsuario($Fila['IdUsuario']);
                 $Usuario->SetNombreUsuario($Fila['Nombre']);
+                $Usuario->SetEmail($Fila['Email']);
                 $Usuario->SetTipoId($Fila['IdTipo']);
                 $Usuario->SetActividadId($Fila['IdActividad']);
 
@@ -115,22 +116,20 @@ class UsuarioSQL{
     public static function ActualizaUsuario($Usuario){
         $IdUsuario=$Usuario->GetIdUsuario();
         $NombreUsusario=$Usuario->GetNombreUsuario();
-        $Email=$Usuario->GetEmail();
         $Telefono=$Usuario->GetTelefono();
         $Contrasena=$Usuario->GetContrasena();
 
         try {
             $Conexion=Conexion::getConexion();
 
-            $sentencia = $Conexion->prepare("UPDATE `usuarios` SET `Nombre` = :NombreUsusario, `Email` = :Email, `Telefono` = :Telefono, `Contrasena` = :Contrasena WHERE `usuarios`.`IdUsuario` = :IdUsuario;");
+            $sentencia = $Conexion->prepare("UPDATE `usuarios` SET `Nombre` = :NombreUsusario, `Telefono` = :Telefono, `Contrasena` = :Contrasena WHERE `usuarios`.`IdUsuario` = :IdUsuario;");
             $sentencia->bindParam(':IdUsuario', $IdUsuario);
             $sentencia->bindParam(':NombreUsusario', $NombreUsusario);
-            $sentencia->bindParam(':Email', $Email);
             $sentencia->bindParam(':Telefono', $Telefono);
             $sentencia->bindParam(':Contrasena', $Contrasena);
             
             if ($sentencia->execute()) {
-                return true;
+                return "Actualizado Correctamente";
             }else{
                 $e=new PDOException;
                 echo 'Error: ' . $e->getMessage();

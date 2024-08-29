@@ -23,24 +23,24 @@
             <div class="InicioDeSesion">
     
                     <form class="InSe" action="" method="post" >
-                        <label class="TituloForm" for="Nombre">Nombre de Usuario</label>
-                            <input class="InputForm" type="text" name="Nombre" id="Nombre" value="<?php echo $Nombre ?>" readonly>
 
-                        <label class="TituloForm" for="Email">Email</label>
-                            <input class="InputForm" type="email" name="Email" id="Email" value="<?php echo $Email ?>" readonly>
+                        <label class="TituloForm" for="ActualizarNombre">Nombre de Usuario</label>
+                            <input class="InputForm" type="text" name="ActualizarNombre" id="ActualizarNombre" value="<?php echo $Nombre ?>" readonly>
 
-                        <label class="TituloForm" for="Telefono">Telefono</label>
-                            <input class="InputForm" type="number" name="Telefono" id="Telefono" value="<?php echo $Telefono ?>" required>
+                        <label class="TituloForm" for="ActualizarEmail">Email</label>
+                            <input class="InputForm" type="email" name="ActualizarEmail" id="ActualizarEmail" value="<?php echo $Email ?>" readonly>
 
-                        <label class="TituloForm" for="Contraseña"> Contraseña</label>
-                            <input class="InputForm" type="text" name="Contraseña" id="Contraseña" required>
+                        <label class="TituloForm" for="ActualizarTelefono">Telefono</label>
+                            <input class="InputForm" type="number" name="ActualizarTelefono" id="ActualizarTelefono" value="<?php echo $Telefono ?>" required>
 
-                            <label class="TituloForm" for="Contraseña"> Vuelve a ingresar tu contraseña</label>
-                            <input class="InputForm" type="password" name="Contraseña" id="Contraseña" required>
+                        <label class="TituloForm" for="ActualizarContraseña"> Contraseña</label>
+                            <input class="InputForm" type="password" name="ActualizarContraseña" id="ActualizarContraseña" required>
+
+                        <label class="TituloForm" for="ActualizarContraseña2"> Vuelve a ingresar tu contraseña</label>
+                            <input class="InputForm" type="password" name="ActualizarContraseña2" id="ActualizarContraseña2" required>
                         
                                 <input class="SendForm" type="submit" value="Actualizar" >
                     </form>
-
             </div>
         </div>
     </div>

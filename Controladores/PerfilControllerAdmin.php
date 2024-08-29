@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if ($_SESSION['TipoId'] == "1") {
     $IdUser = $_GET['IdUsuario'];
     $Usuario = UsuarioSQL::VistaUsuario($IdUser);

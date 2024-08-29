@@ -16,6 +16,7 @@ if ($_POST!=null) {
         $IdUser = $Usuario->GetIdUsuario();
         $NombreUsuario = $Usuario->GetNombreUsuario();
         $TipoId = $Usuario->GetTipoId();
+        $Mail = $Usuario->GetEmail();
         $ActividadId = $Usuario->GetActividadId();
         if ($ActividadId=="2") {
             $Salida = "<script> alert('Su cuenta esta inactiva, contactese con la empresa para reactivarla')</script>";
@@ -24,6 +25,7 @@ if ($_POST!=null) {
             session_start();
             $_SESSION['IdUsuario'] = $IdUser;
             $_SESSION['NombreUsuario'] = $NombreUsuario;
+            $_SESSION['Mail'] = $Mail;
             $_SESSION['TipoId'] = $TipoId;
             header("Location: Perfil.php");
         }
