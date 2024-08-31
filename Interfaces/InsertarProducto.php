@@ -22,22 +22,32 @@
     <div class="InicioSesionContainer">
         <div class="InicioDeSesion">
 
-                <form class="InSe" action="">
+                <form class="InSe" method="post" action="InsertarProducto.php" enctype="multipart/form-data">
                     <h2>Nuevo Producto</h2>
-                    <label class="TituloForm" for="Nombre">Nombre del Producto</label>
-                        <input class="InputForm" type="text" name="Nombre" id="Nombre" placeholder="Figura" required>
+                    <?php if ($Salida!=null) {
+                        echo "$Salida";
+                        echo "$Salida2";
+                    } ?>
+                    <label class="TituloForm" for="InsertarProductoNombre" >Nombre del Producto</label>
+                        <input class="InputForm" type="text" name="InsertarProductoNombre" id="InsertarProductoNombre" placeholder="Figura" required>
 
-                        <label class="TituloForm" for="Imagen">Imagen</label>
-                        <input class="InputForm" type="file" name="Imagen" id="Imagen" placeholder="example@mail.com" required>
+                        <label class="TituloForm" for="InsertarProductoImagen">Imagen</label>
+                        <input class="InputForm" type="file" name="InsertarProductoImagen" id="InsertarProductoImagen" required>
 
-                        <label class="TituloForm" for="Descripcion">Descripción</label>
-                        <textarea class="InputForm" name="Descripcion" id="Descripcion"></textarea>
+                        <label class="TituloForm" for="InsertarProductoDescripcion">Descripción</label>
+                        <textarea class="InputForm" name="InsertarProductoDescripcion" id="InsertarProductoDescripcion"></textarea>
 
-                        <label class="TituloForm" for="Precio">Precio</label>
-                        <input class="InputForm" type="number" name="Precio" id="Telefono" placeholder="1000.09" required>
+                        <label class="TituloForm" for="InsertarProductoPrecio">Precio</label>
+                        <input class="InputForm" type="number" name="InsertarProductoPrecio" id="InsertarProductoPrecio" placeholder="1000.09" required>
 
-                        <label class="TituloForm" for="Stock">Stock</label>
-                        <input class="InputForm" type="number" name="Precio" id="Telefono" placeholder="10" required>
+                        <label class="TituloForm" for="InsertarProductoStock">Stock</label>
+                        <input class="InputForm" type="number" name="InsertarProductoStock" id="InsertarProductoStock" placeholder="10" required>
+
+                        <label class="TituloForm" for="InsertarProductoCategoria">Categoria</label>
+                    <select class="SelectForm" name="InsertarProductoCategoria" id="InsertarProductoCategoria">
+                        <option class="optionForm" value="1">Impresiones3d</option>
+                        <option class="optionForm" value="2">Forros y parasoles</option>
+                    </select>
 
                     <input class="SendForm" type="submit" value="InsertarProducto" >
                 </form>

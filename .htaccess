@@ -1,1 +1,1 @@
-ErrorDocument 404 http://localhost/Tiendita/Vistas/Error404.php
+ErrorDocument 404 http://localhost/Tienda/Vistas/Error404.php

@@ -938,43 +938,45 @@ select{
 }
 
 .ErrorContainer{
-    width: clamp(800px, 80%, 500px);
+    width: clamp(600px, 50%, 300px);
+    height: 100dvh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: auto;
-    background-color: aliceblue;
-    border-radius: 25px;
+    background-color: var(--third-color);
 }
 
 .ErrorContainer h2{
     font-size: 3rem;
     color: var(--principal-color);
+    text-align: center;
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .ErrorContainer h4{
     font-size: 2rem;
     color: var(--principal-color);
+    text-align: center;
+    text-wrap: pretty;
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .ErrorContainer a{
     display: block;
     background-color: #d467de;
     font-size: 1.5rem;
-    color: var(--four-color);
+    color: aliceblue;
     text-decoration: none;
     border-radius: 25px;
     padding: 10px;
 }
 
-.ErrorContainer a :hover{
-    color: var(--third-color);
-}
-
 .ErrorContainer img{
     width: clamp(600px, 50%, 300px);
+    margin-bottom: 0;
 }
 
 @media screen and (max-width:720px ) {
