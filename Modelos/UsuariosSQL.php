@@ -172,7 +172,7 @@ class UsuarioSQL{
 
                 return $Usuario;
             }else{
-                return null;
+                return false;
             }
 
 
