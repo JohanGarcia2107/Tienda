@@ -23,22 +23,22 @@
             <div class="InicioDeSesion">
                 <form class="InSe" action="">
                     <label class="TituloForm" for="IdProducto">Id Producto</label>
-                        <input class="InputForm" type="number" name="IdProducto" id="IdProducto" placeholder="1" readonly>
+                        <input class="InputForm" type="number" name="EditarIdProducto" id="IdProducto" value="<?php echo $IdProd ?>" readonly>
 
                         <label class="TituloForm" for="Nombre">Nombre de Producto</label>
-                            <input class="InputForm" type="text" name="Nombre" id="Nombre" placeholder="Figura">
+                            <input class="InputForm" type="text" name="EditarIdNombre" id="Nombre" value="<?php echo $NombreProd ?>">
 
                         <label class="TituloForm" for="Imagen">Imagen</label>
-                            <input class="InputForm" type="file" name="Imagen" id="Imagen" placeholder="example@mail.com" required>
+                            <input class="InputForm" type="file" name="EditarIdImagen" id="Imagen" >
 
                         <label class="TituloForm" for="Descripcion">Descripción</label>
-                            <textarea class="InputForm" name="Descripcion" id="Descripcion"></textarea>
+                            <textarea class="InputForm" name="EditarIdDescripcion" id="Descripcion" value="<?php echo $Descripcion ?>"></textarea>
 
                         <label class="TituloForm" for="Precio">Precio</label>
-                            <input class="InputForm" type="number" name="Precio" id="Telefono" placeholder="1000.09" required>
+                            <input class="InputForm" type="number" name="EditarIdPrecio" id="Telefono" value="<?php echo $Precio ?>" required>
 
                             <label class="TituloForm" for="Stock">Stock</label>
-                        <input class="InputForm" type="number" name="Precio" id="Telefono" placeholder="10" required>
+                        <input class="InputForm" type="number" name="EditarIdPrecio" id="Telefono" value="<?php echo $Stock ?>" required>
                         <input class="SendForm" type="submit" value="Actualizar" >
 
                 </form>

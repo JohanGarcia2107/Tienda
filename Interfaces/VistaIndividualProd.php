@@ -27,31 +27,31 @@
 <section class="VProducto">
     <div class="VisionProducto">
         <div class="VPImgContainer">
-            <img class="prod_image" src="IMGs/1.jpg" >
+            <img class="prod_image" src="IMGs/<?php echo $Img; ?>" >
         </div>
         <div class="InfoProd">
             <div class="NombreProd">
                 <h2>
-                    Copa Champions
+                    <?php echo $NombreProd ?>
                 </h2>
                 <p class="DescripcionProd">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ad recusandae natus sapiente quae iusto dignissimos mollitia iure assumenda velit. Voluptatibus vero at accusamus velit quaerat. Minima at ipsa labore!
+                    <?php echo $Descripcion ?>
                 </p>
             </div>
                 <div class="Detalles">
                     <div class="PrecioYStock">
                         <div>
-                            <p>Precio</p>
+                            <p>Precio: <?php echo $Precio ?> COP </p>
                         </div>
                         <div>
-                            <p>Stock</p>
+                            <p>Stock: <?php echo $Stock ?> Unidades</p>
                         </div>
                     </div>
                     <div >
                         <div>
                             <form class="MasCarrito" action="Carrito">
                                 <label for="Cantidad"> Cantidad a comprar
-                                    <input type="number" value="1" name="Cantidad" class="Cantidad" >
+                                    <input type="number" value="1" name="Cantidad" class="Cantidad" min="1" max="<?php echo $Stock ?>">
                                 </label>
                                 <input class="ACarrito" type="button" value="Anadir al Carrito">
                             </form>

@@ -49,7 +49,7 @@
                         <?php foreach ($ListaProdAdmin as $ProdAdmin) { ?>
                         <tbody class="ContenidoListados">
                             <td class="ItemList"><?php echo $ProdAdmin->GetIdProducto(); ?></td>
-                            <td class="ItemList"><img class="IMGListadoProd" src="IMGs/<?php echo $ProdAdmin->GetDirIMGProd(); ?>" alt="Producto sin imagen"></td>
+                            <td class="ItemList"><img width="100px" class="IMGListadoProd" src="IMGs/<?php echo $ProdAdmin->GetDirIMGProd(); ?>" alt="Producto sin imagen o probelmas de carga"></td>
                             <td class="ItemList"><?php echo $ProdAdmin->GetNombreProducto(); ?></td>
                             <td class="ItemList"><?php echo $ProdAdmin->GetPrecio(); ?></td>
                             <td class="ItemList"><?php echo $ProdAdmin->GetStock(); ?></td>
@@ -63,7 +63,7 @@
                                 </a>
                             </td>
                             <td class="BotonDetalles">
-                                <a href="EditarProductos.php?IdProdAEditar=<?php echo $ProdAdmin->GetIdProducto(); ?>">
+                                <a href="EditarProductos.php?IdProd=<?php echo $ProdAdmin->GetIdProducto(); ?>">
                                     <button class="EstiloBotonDetalles">
                                         Editar
                                     </button>
