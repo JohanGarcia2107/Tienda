@@ -974,9 +974,17 @@ select{
     padding: 10px;
 }
 
+.ErrorContainer a :hover{
+    background-color: var(--four-color);
+}
+
 .ErrorContainer img{
     width: clamp(600px, 50%, 300px);
     margin-bottom: 0;
+}
+
+.IMGListadoProd{
+    max-width: 200px;
 }
 
 @media screen and (max-width:720px ) {

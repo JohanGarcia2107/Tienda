@@ -233,7 +233,7 @@ class ProductosSQL{
 
             if (is_string($Valor)) {
                 $Valor="%".$Valor."%";
-                $sentencia = $Conexion->prepare("SELECT `productos`.`IdProducto`, `productos`.`Nombre`, `productos`.`DireccionIMGProd`, `productos`.`Descripcion`, `productos`.`Precio`, `productos`.`Stock`, `categorias`.`NombreCategoria` as `Categoria`, `actividad`.`NombreCtividad` AS `Actividad` FROM `productos` JOIN `categorias` on `productos`.`IdCategoria`=`categorias`.`IdCategoria` JOIN `actividad` on `productos`.`IdActividad`=`actividad`.`IdActividad` WHERE `productos`.`Nombre` LIKE :Valor AND `productos`.`IdActividad`= 1 OR `categorias`.`NombreCategoria` LIKE :Valor AND `productos`.`IdActividad`= 1;");
+                $sentencia = $Conexion->prepare("SELECT `productos`.`IdProducto`, `productos`.`Nombre`, `productos`.`DireccionIMGProd`, `productos`.`Descripcion`, `productos`.`Precio`, `productos`.`Stock`, `categorias`.`NombreCategoria` as `Categoria`, `actividad`.`NombreCtividad` AS `Actividad` FROM `productos` JOIN `categorias` on `productos`.`IdCategoria`=`categorias`.`IdCategoria` JOIN `actividad` on `productos`.`IdActividad`=`actividad`.`IdActividad` WHERE (`productos`.`Nombre` LIKE '%a%' AND `productos`.`IdActividad`= 1 AND `productos`.`Stock` > 0) OR (`categorias`.`NombreCategoria` LIKE '%a%' AND `productos`.`IdActividad`= 1 AND `productos`.`Stock` > 0);");
                 $sentencia->bindParam(':Valor',$Valor);
             
                 $sentencia->execute();
@@ -255,7 +255,7 @@ class ProductosSQL{
 
             }else {
 
-                $sentencia = $Conexion->prepare("SELECT * FROM `productos` WHERE  `productos`.`IdActividad`= 1;");
+                $sentencia = $Conexion->prepare("SELECT * FROM `productos` WHERE  `productos`.`IdActividad`= 1 AND `productos`.`Stock` > 0;");
             
                 $sentencia->execute();
 
