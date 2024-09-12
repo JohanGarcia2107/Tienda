@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+    $ProductoEnCarrito=false;
     $IProd = $_GET['IdProd'];
     $Producto = ProductosSQL::VistaProducto($IProd);
     if ($Producto) {
@@ -12,8 +12,18 @@ session_start();
         $Precio = $Producto->GetPrecio();
         $Stock = $Producto->GetStock();
         $Actividad = $Producto->GetActividadId();
+        if (isset($_SESSION['CarritoDeComprar'])) {
+            foreach ($_SESSION['CarritoDeComprar'] as $ProductoCarrito) {
+                $IdProdCarrito = $ProductoCarrito->GetIdProducto();
+                if ($IdProdCarrito==$IdProd) {
+                    $ProductoEnCarrito=true;
+                }
+            }
+            //echo $ProductoEnCarrito?"true":"false";
+            //print_r($_SESSION['CarritoDeComprar']);
+        }
     }else {
-        header("Location: Error404.php");
+        header('location:Error404.php');
     }
 
 

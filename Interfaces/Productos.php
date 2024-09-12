@@ -19,14 +19,16 @@
                 <input class="Input_Search" type="search" name="BuscarProducto" placeholder="Buscar...">
                 <button class="Buscar" type="submit"><span class="material-symbols-outlined">search</span></button>
             </form>
-            <img class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
+            <img  class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
-        <a class="Confirm" href="ConfirmarPedido.php" role="button">
-            <div class="Carrito">
-            <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>
-            <i class="TextoCarrito">Carrito de compra</i>
-            </div>
-        </a>
+        <?php if ($_SESSION && isset($_SESSION['CarritoDeComprar'])) { ?>
+            <a class="Confirm" href="ConfirmarPedido.php" role="button">
+                <div class="Carrito">
+                    <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>
+                    <i class="TextoCarrito">Carrito de compra</i>
+                </div>
+            </a>
+        <?php }?>
     </header>
     <section class="Productos">
         <?php foreach ($ListaProdUser as $Prod) {?>
@@ -34,7 +36,7 @@
             <a class="r" href="VistaIndividualProd.php?IdProd=<?php echo $Prod->GetIdProducto(); ?>">
                 <div class="Prod">
                     <div class="P1Prod">
-                            <img class="DirIMGProd" src="IMGs/<?php echo $Prod->GetDirIMGProd(); ?>" alt="Producto sin imagen o probelmas de carga" alt="Producto">
+                            <img loading="lazy" class="DirIMGProd" src="IMGs/<?php echo $Prod->GetDirIMGProd(); ?>" alt="Producto sin imagen o probelmas de carga" alt="Producto">
                             <p class="NombreProd"><?php echo $Prod->GetNombreProducto(); ?></p>
                     </div>
                     <div class="P2Prod">

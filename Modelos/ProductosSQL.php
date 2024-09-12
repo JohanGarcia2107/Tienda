@@ -45,23 +45,19 @@ class ProductosSQL{
         $Descripcion=$Producto->GetDescripcion();
         $Precio=$Producto->GetPrecio();
         $Stock=$Producto->GetStock();
-        $IdCategoria=$Producto->GetIdCategoria();
-        $IdActividad=$Producto->GetActividadId();
 
 
 
         try {
             $Conexion=Conexion::getConexion();
 
-            $sentencia = $Conexion->prepare("UPDATE `productos` SET `DireccionIMGProd` = :DirIMGProd, `Nombre` = :NombreProducto, `Descripcion` = :Descripcion, `Precio` = :Precio, `Stock` = :Stock, `IdCategoria` = :IdCategoria WHERE `productos`.`IdProducto` = :IdProducto;");
+            $sentencia = $Conexion->prepare("UPDATE `productos` SET `DireccionIMGProd` = :DirIMGProd, `Nombre` = :NombreProducto, `Descripcion` = :Descripcion, `Precio` = :Precio, `Stock` = :Stock WHERE `productos`.`IdProducto` = :IdProducto;");
 
             $sentencia->bindParam(':DirIMGProd', $DirIMGProd);
             $sentencia->bindParam(':NombreProducto', $NombreProducto);
             $sentencia->bindParam(':Descripcion', $Descripcion);
             $sentencia->bindParam(':Precio', $Precio);
             $sentencia->bindParam(':Stock', $Stock);
-            $sentencia->bindParam(':IdCategoria', $IdCategoria);
-            $sentencia->bindParam(':IdActividad', $IdActividad);
             $sentencia->bindParam(':IdProducto', $IdProducto);
             
             $sentencia->execute();
@@ -70,6 +66,30 @@ class ProductosSQL{
             $sentencia=null;
             $Conexion=null;
             return true;
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+
+    }
+
+    public static function ConsultarIMG($IdProducto){
+        $IdProducto=$IdProducto;
+
+        try {
+            $Conexion=Conexion::getConexion();
+
+            $sentencia = $Conexion->prepare("SELECT `DireccionIMGprod` FROM `productos` WHERE `productos`.`IdProducto` = :IdProducto;");
+            $sentencia->bindParam(':IdProducto',$IdProducto);
+            
+            $sentencia->execute();
+            $Imagen=$sentencia->fetch(PDO::FETCH_ASSOC);
+            $NombreIMG=$Imagen['DireccionIMGProd'];
+
+
+            $sentencia=null;
+            $Conexion=null;
+            return $NombreIMG;
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             return false;

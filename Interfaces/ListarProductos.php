@@ -49,7 +49,7 @@
                         <?php foreach ($ListaProdAdmin as $ProdAdmin) { ?>
                         <tbody class="ContenidoListados">
                             <td class="ItemList"><?php echo $ProdAdmin->GetIdProducto(); ?></td>
-                            <td class="ItemList"><img width="100px" class="IMGListadoProd" src="IMGs/<?php echo $ProdAdmin->GetDirIMGProd(); ?>" alt="Producto sin imagen o probelmas de carga"></td>
+                            <td class="ItemList"><img loading="lazy" width="100px" class="IMGListadoProd" src="IMGs/<?php echo $ProdAdmin->GetDirIMGProd(); ?>" alt="Producto sin imagen o probelmas de carga"></td>
                             <td class="ItemList"><?php echo $ProdAdmin->GetNombreProducto(); ?></td>
                             <td class="ItemList"><?php echo $ProdAdmin->GetPrecio(); ?></td>
                             <td class="ItemList"><?php echo $ProdAdmin->GetStock(); ?></td>

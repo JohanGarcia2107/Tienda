@@ -1,5 +1,7 @@
 <?php
 
+require '../Modelos/Composer/vendor/autoload.php';
+
 use SMTPValidateEmail\Validator as SmtpEmailValidator;
 
 class ComprobarMail {

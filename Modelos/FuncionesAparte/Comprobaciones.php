@@ -24,7 +24,7 @@ class Comprobaciones{
         return !(empty($cadenaLimpia));
     }
 
-    public static function ActualizacionCamposVacios($IdFactura){
+    public static function ActualizacionCampos($IdFactura){
         $IdFactura=$IdFactura;
         try {
             $Conexion=Conexion::getConexion();

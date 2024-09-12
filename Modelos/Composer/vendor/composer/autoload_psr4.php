@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'SMTPValidateEmail\\' => array($vendorDir . '/zytzagoo/smtp-validate-email/src'),
-    'Jdavi\\TiendaMaster\\' => array($baseDir . '/src'),
+    'Jdavi\\Tienda\\' => array($baseDir . '/src'),
 );

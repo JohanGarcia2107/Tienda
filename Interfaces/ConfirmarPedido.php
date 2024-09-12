@@ -1,9 +1,15 @@
+<?php 
+session_start();
+if (!(isset($_SESSION['CarritoDeComprar']))) {
+    header('Location: Productos.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Confirmar Pedido</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="icon" href="IMGs/Logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -51,16 +57,22 @@
                                     <th class="Encabezado">Precio Total</th>
                                 </tr>
                             </thead>
+                            <?php foreach ($_SESSION['CarritoDeComprar'] as $Producto) { ?>
                             <tbody class="ContenidoListados">
-                                <td class="ItemList">a</td>
-                                <td class="ItemList">a</td>
-                                <td class="ItemList">a</td>
-                                <td class="ItemList">a</td>
+                                <td class="ItemList"><?php echo $Producto->GetNombreProductoDetalle(); ?></td>
+                                <td class="ItemList"><?php echo "$ ".$Producto->GetPrecio()." COP"; ?></td>
+                                <td class="ItemList"><?php echo $Producto->GetCantidad()." Unidades"; ?></td>
+                                <td class="ItemList"><?php echo "$ ".$Producto->GetPrecioTotal()." COP"; ?></td>
                             </tbody>
+                            <?php } ?>
                             <tfoot>
                                 <tr>
                                     <th class="Total">Total</th>
-                                    <td class="TotalPrecio" colspan="2"></td>
+                                    <td class="TotalPrecio" colspan="2"><?php $Total = 0;
+                                    foreach ($_SESSION['CarritoDeComprar'] as $Producto) {
+                                        $Total = $Total + $Producto->GetPrecioTotal();
+                                    }
+                                    echo "$ $Total COP" ?></td>
                                 </tr>
                             </tfoot>
                         </table>

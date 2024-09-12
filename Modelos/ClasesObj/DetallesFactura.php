@@ -2,13 +2,15 @@
 
 class DetallesFacturas {
     private $IdProducto;
+    private $NombreProducto;
     private $Precio;
     private $Cantidad;
     private $PrecioTotal;
     private $IdFactura;
 
-    public function __construct($IdProducto=null,$Precio=null,$Cantidad=null,$PrecioTotal=null,$IdFactura=null){
+    public function __construct($IdProducto=null, $NombreProducto=null, $Precio=null,$Cantidad=null,$PrecioTotal=null,$IdFactura=null){
         $this->IdProducto = $IdProducto;
+        $this->NombreProducto = $NombreProducto;
         $this->Precio = $Precio;
         $this->Cantidad = $Cantidad;
         $this->PrecioTotal = $PrecioTotal;
@@ -22,6 +24,14 @@ class DetallesFacturas {
 
     public function GetIdProducto(){
         return $this->IdProducto;
+    }
+
+    public function SetNombreProductoDetalle($NombreProducto){
+        $this->NombreProducto = $NombreProducto;
+    }
+
+    public function GetNombreProductoDetalle(){
+        return $this->NombreProducto;
     }
 
     public function SetPrecio($Precio){

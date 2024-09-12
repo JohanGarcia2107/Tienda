@@ -1,8 +1,8 @@
 {
-    "name": "jdavi/tienda-master",
+    "name": "jdavi/tienda",
     "autoload": {
         "psr-4": {
-            "Jdavi\\TiendaMaster\\": "src/"
+            "Jdavi\\Tienda\\": "src/"
         }
     },
     "authors": [

@@ -17,12 +17,14 @@
         <div  class="Logotipo2">
             <img class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
-        <a class="Confirm" href="ConfirmarPedido.php" role="button">
-            <div class="Carrito">
-            <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>
-            <i class="TextoCarrito">Carrito de compra</i>
-            </div>
-        </a>
+        <?php if ($_SESSION && isset($_SESSION['CarritoDeComprar'])) { ?>
+            <a class="Confirm" href="ConfirmarPedido.php" role="button">
+                <div class="Carrito">
+                    <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>
+                    <i class="TextoCarrito">Carrito de compra</i>
+                </div>
+            </a>
+        <?php }?>
     </header>
 <section class="VProducto">
     <div class="VisionProducto">
@@ -49,12 +51,23 @@
                     </div>
                     <div >
                         <div>
-                            <form class="MasCarrito" action="Carrito">
-                                <label for="Cantidad"> Cantidad a comprar
-                                    <input type="number" value="1" name="Cantidad" class="Cantidad" min="1" max="<?php echo $Stock ?>">
-                                </label>
-                                <input class="ACarrito" type="button" value="Anadir al Carrito">
+                            <?php if (!($_SESSION)) { ?>
+                                <form class="MasCarrito" action="InicioSesion.php">
+                                <input style="padding: 10px;" class="ACarrito" type="submit" value="Inicia Sesion para comprar">
                             </form>
+                            <?php }elseif ($ProductoEnCarrito == true) { ?>
+                            <form class="MasCarrito" action="VistaIndividualProd.php?IdProd=<?php echo $IdProd ?>" method="post">
+                                    <input type="hidden" name="ProductoABorrar" value="<?php echo $IdProd ?>">
+                                <input style="padding: 10px;" class="ACarrito" type="submit" value="Eliminar del Carrito ">
+                            </form>
+                                <?php }else{ ?>
+                            <form class="MasCarrito" action="VistaIndividualProd.php?IdProd=<?php echo $IdProd ?>" method="post">
+                                <label for="Cantidad"> Cantidad a comprar
+                                    <input type="number" id="Cantidad" name="CantidadAComprar" class="Cantidad" min="1" max="<?php echo $Stock ?>">
+                                </label>
+                                <input style="padding: 10px;" class="ACarrito" type="submit" value="Anadir al Carrito">
+                            </form>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

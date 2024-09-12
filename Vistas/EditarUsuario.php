@@ -9,8 +9,6 @@ require_once("../Controladores/PerfilControllerAdmin.php");
 
 require_once("../Controladores/EditarUsuariosController.php");
 
-require_once("../Controladores/PerfilControllerAdmin.php");
-
 require_once("../Interfaces/EditarUsuario.php");
 
 ?>
