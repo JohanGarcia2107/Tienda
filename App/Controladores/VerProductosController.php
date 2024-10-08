@@ -23,7 +23,7 @@ session_start();
             //print_r($_SESSION['CarritoDeComprar']);
         }
     }else {
-        header('location:Error404.php');
+        header('location:../Error404.php');
     }
 
 
