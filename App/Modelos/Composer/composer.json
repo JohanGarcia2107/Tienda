@@ -1,8 +1,8 @@
 {
-    "name": "jdavi/tienda",
+    "name": "jdavi/composer",
     "autoload": {
         "psr-4": {
-            "Jdavi\\Tienda\\": "src/"
+            "Jdavi\\Composer\\": "src/"
         }
     },
     "authors": [

@@ -1,7 +1,11 @@
 <?php
+session_start();
 
 $Salida = null;
 $Salida2 = null;
+if ($_SESSION) {
+    header('location:../index.php');
+}
 if ($_POST) {
     $NombreUsusario=$_POST['NombreRegistro'];
     $Email=$_POST['EmailRegistro'];

@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'jdavi/tienda',
+        'name' => 'jdavi/composer',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '83ad79ca618edc3a0a9178ad9a9c2856f86190e9',
+        'reference' => '2c77c06e51e7fbd869792b2ce3ddb41efc43a2fd',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => false,
+        'dev' => true,
     ),
     'versions' => array(
-        'jdavi/tienda' => array(
+        'jdavi/composer' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '83ad79ca618edc3a0a9178ad9a9c2856f86190e9',
+            'reference' => '2c77c06e51e7fbd869792b2ce3ddb41efc43a2fd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

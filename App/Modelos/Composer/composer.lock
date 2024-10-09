@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fae3a64bb7eabf5d86401a6b7abe6acb",
+    "content-hash": "5917de6ed5a255b91071cd70c1000d4c",
     "packages": [
         {
             "name": "zytzagoo/smtp-validate-email",

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd42ea608dee9927d5e6269fed695320e
+class ComposerStaticInit6203377b56cc1769df0cde81968fb6be
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
@@ -13,7 +13,7 @@ class ComposerStaticInitd42ea608dee9927d5e6269fed695320e
         ),
         'J' => 
         array (
-            'Jdavi\\Tienda\\' => 13,
+            'Jdavi\\Composer\\' => 15,
         ),
     );
 
@@ -22,7 +22,7 @@ class ComposerStaticInitd42ea608dee9927d5e6269fed695320e
         array (
             0 => __DIR__ . '/..' . '/zytzagoo/smtp-validate-email/src',
         ),
-        'Jdavi\\Tienda\\' => 
+        'Jdavi\\Composer\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -35,9 +35,9 @@ class ComposerStaticInitd42ea608dee9927d5e6269fed695320e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd42ea608dee9927d5e6269fed695320e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd42ea608dee9927d5e6269fed695320e::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd42ea608dee9927d5e6269fed695320e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6203377b56cc1769df0cde81968fb6be::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6203377b56cc1769df0cde81968fb6be::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6203377b56cc1769df0cde81968fb6be::$classMap;
 
         }, null, ClassLoader::class);
     }
