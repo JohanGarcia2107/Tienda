@@ -7,5 +7,5 @@
     RewriteBase /Tienda/public
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.+)$ Error404.php?url=1 [QSA,L]
+    ErrorDocument 404 http://localhost/Tienda/Error404.php
     </IfModule>
