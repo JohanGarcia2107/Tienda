@@ -21,7 +21,7 @@
             </form>
             <img  class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
         </div>
-        <?php if ($_SESSION && isset($_SESSION['CarritoDeComprar'])) { ?>
+        <?php if ($_SESSION && isset($_SESSION['CarritoDeComprar']) ) { ?>
             <a class="Confirm" href="ConfirmarPedido.php" role="button">
                 <div class="Carrito">
                     <span class="material-symbols-outlined CarritoCompra">Shopping_cart</span>

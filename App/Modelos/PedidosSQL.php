@@ -1,9 +1,5 @@
 <?php
 
-require_once("../BaseDatos/Conexion.php");
-require_once("ClasesObj/Pedidos.php");
-require_once("FuncionesAparte/Comprobaciones.php");
-
 class PedidosSQL {
     public static function InsertarPedido($IdFactura){
         $IdFactura=$IdFactura;

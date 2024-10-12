@@ -15,9 +15,13 @@
     <div class="Contenido Contenido2">
     <header>
         <h1>CUBRIMAGEN</h1>
-        <div  class="Logotipo">
-            <img class="LogoTipoIMG" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
-        </div>
+        <div  class="Logotipo2">
+                <form class="BarraBusqueda" action="ListarPedidos.php" method="get">
+                    <input class="Input_Search" type="search" name="BuscarPedido" placeholder="IdFactura...">
+                    <button class="Buscar" type="submit"><span class="material-symbols-outlined">search</span></button>
+                </form>
+                <img class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
+            </div>
     </header>
     <div class="TableContainer">
         <div class="Tables">
@@ -34,23 +38,30 @@
                         <th class="Encabezado">Detalles</th>
                     </tr>
                 </thead>
-                <tbody class="ContenidoListados">
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="BotonDetalles">
-                        <a href="Detalles.php">
-                            <button class="EstiloBotonDetalles">
-                                Ver Detalles
-                            </button>
-                        </a>
-                    </td>
-                </tbody>
+                <?php foreach ($ListaPed as $Ped) { ?>
+                    <tbody class="ContenidoListados">
+                        <td class="ItemList"><?php echo $Ped->GetIdPedido(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetIdFactura(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetIdUsuario(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetMontoAPagar(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetFecha(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetDireccion(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetIdEstado(); ?></td>
+                        <td class="BotonDetalles">
+                            <a href="Detalles.php?Factura=<?php echo $Ped->GetIdFactura(); ?>">
+                                <button class="EstiloBotonDetalles">
+                                    Ver Detalles
+                                </button>
+                            </a>
+                        </td>
+                    </tbody>
+                    <?php } ?>
             </table>
+            <?php if (empty($ListaPed)) {?>
+                    <div style="margin: auto;" class="data_container">
+                        <p style="margin: auto; color:aliceblue" class="Titulo1" >No haz hecho compras</p>
+                    </div>
+                    <?php } ?>
         </div>
     </div>
 </div>

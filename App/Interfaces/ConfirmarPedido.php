@@ -1,9 +1,3 @@
-<?php 
-session_start();
-if (!(isset($_SESSION['CarritoDeComprar']))) {
-    header('Location: Productos.php');
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,15 +27,14 @@ if (!(isset($_SESSION['CarritoDeComprar']))) {
     <div class="InicioSesionContainer">
         <div class="InicioDeSesion">
 
-                <form class="InSe" action="ComfirmarPedidoController.php" method="post">
+                <form class="InSe" action="ConfirmarPedido.php" method="post">
                     <h2>Crear Pedido</h2>
-                    <label class="TituloForm" for="Direccion">Dirección</label>
-                        <input class="InputForm" type="text" name="Direccion" id="Direccion"  required>
+                    <label class="TituloForm" for="DireccionPedido">Dirección</label>
+                        <input class="InputForm" type="text" name="DireccionPedido" id="DireccionPedido"  required>
                     
                         <label class="TituloForm" for="MedioPago">Medio de Pago</label>
                         <select class="SelectForm" name="MedioPago" id="MedioPago">
-                            <option class="optionForm" value="Visitante">Contra entrega</option>
-                            <option class="optionForm" value="Administrador">Tarjeta</option>
+                            <option class="optionForm" value="1">Contra entrega</option>
                         </select>
                     
                     <input class="SendForm" type="submit" value="Confirmar compra" >
@@ -54,7 +47,8 @@ if (!(isset($_SESSION['CarritoDeComprar']))) {
                                     <th class="Encabezado">Producto</th>
                                     <th class="Encabezado">Precio</th>
                                     <th class="Encabezado">Cantidad</th>
-                                    <th class="Encabezado">Precio Total</th>
+                                    <th class="Encabezado">Precio Total (Mas IVA)</th>
+                                    <th class="Encabezado">Eliminar</th>
                                 </tr>
                             </thead>
                             <?php foreach ($_SESSION['CarritoDeComprar'] as $Producto) { ?>
@@ -63,6 +57,12 @@ if (!(isset($_SESSION['CarritoDeComprar']))) {
                                 <td class="ItemList"><?php echo "$ ".$Producto->GetPrecio()." COP"; ?></td>
                                 <td class="ItemList"><?php echo $Producto->GetCantidad()." Unidades"; ?></td>
                                 <td class="ItemList"><?php echo "$ ".$Producto->GetPrecioTotal()." COP"; ?></td>
+                                <td class="BotonDetalles">
+                                    <form class="" action="ConfirmarPedido.php" method="post">
+                                        <input type="hidden" name="ProductoABorrar" value="<?php echo $Producto->GetIdProducto() ?>">
+                                        <input class="EstiloBotonDetalles" type="submit" value="Eliminar">
+                                    </form>
+                                </td>
                             </tbody>
                             <?php } ?>
                             <tfoot>

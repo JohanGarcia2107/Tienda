@@ -12,7 +12,7 @@ if ($_POST) {
                     $Carrito = $_SESSION['CarritoDeComprar'];
                     if ($_POST) {
                         $CantidadAComprar = $_POST['CantidadAComprar'];
-                        $PrecioTotal = $Precio*$CantidadAComprar;
+                        $PrecioTotal = ($Precio*$CantidadAComprar)*1.21;
                         $ProductoAComprar = new DetallesFacturas($IdProd,$NombreProd,$Precio,$CantidadAComprar,$PrecioTotal,null);
                         array_push($Carrito, $ProductoAComprar);
                         $_SESSION['CarritoDeComprar']=$Carrito;
@@ -22,7 +22,7 @@ if ($_POST) {
                     if ($_POST) {
                         $Carrito = array();
                         $CantidadAComprar = $_POST['CantidadAComprar'];
-                        $PrecioTotal = $Precio*$CantidadAComprar;
+                        $PrecioTotal = ($Precio*$CantidadAComprar)*1.21;
                         $ProductoAComprar = new DetallesFacturas($IdProd,$NombreProd,$Precio,$CantidadAComprar,$PrecioTotal,null);
                         array_push($Carrito, $ProductoAComprar);
                         $_SESSION['CarritoDeComprar'] = $Carrito;

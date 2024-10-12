@@ -66,6 +66,26 @@ class Comprobaciones{
             return false;
         }
     }
+
+    public static function ActualizarStock($IdProducto, $Cantidad){
+        $IdProductoA=$IdProducto;
+        $IdProductoB=$IdProducto;
+        $Cantidad=$Cantidad;
+        try {
+            $Conexion=Conexion::getConexion();
+
+            $sentencia = $Conexion->prepare("UPDATE productos SET Stock = ((SELECT Stock FROM productos WHERE IdProducto = :IdProductoA) - :Cantidad) WHERE IdProducto = :IdProductoB;");
+            $sentencia->bindParam(':IdProductoA', $IdProductoA);
+            $sentencia->bindParam(':IdProductoB', $IdProductoB);
+            $sentencia->bindParam(':Cantidad', $Cantidad);
+            $sentencia->execute();
+
+            return true;
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
 }
 
 //Comprobaciones::ActualizacionCamposVacios(6); Si sirve

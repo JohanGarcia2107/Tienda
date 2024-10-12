@@ -16,8 +16,8 @@
         <header>
             <h1>CUBRIMAGEN</h1>
             <div  class="Logotipo2">
-                <form class="BarraBusqueda" action="" method="">
-                    <input class="Input_Search" type="search" name="Buscar" placeholder="Buscar...">
+                <form class="BarraBusqueda" action="ListarPedidos.php" method="get">
+                    <input class="Input_Search" type="search" name="BuscarPedidoAdmin" placeholder="IdFactura, NombreCliente">
                     <button class="Buscar" type="submit"><span class="material-symbols-outlined">search</span></button>
                 </form>
                 <img class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
@@ -39,29 +39,31 @@
                             <th class="Encabezado">Editar Fecha/Estado</th>
                         </tr>
                     </thead>
+                    <?php foreach ($ListaPedAdmin as $PedAdmin) { ?>
                     <tbody class="ContenidoListados">
-                        <td class="ItemList">a</td>
-                        <td class="ItemList">a</td>
-                        <td class="ItemList">a</td>
-                        <td class="ItemList">a</td>
-                        <td class="ItemList">a</td>
-                        <td class="ItemList">a</td>
-                        <td class="ItemList">a</td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetIdPedido(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetIdFactura(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetIdUsuario(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetMontoAPagar(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetFecha(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetDireccion(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetIdEstado(); ?></td>
                         <td class="BotonDetalles">
-                            <a href="Detalles.php">
+                            <a href="Detalles.php?Factura=<?php echo $PedAdmin->GetIdFactura(); ?>">
                                 <button class="EstiloBotonDetalles">
                                     Ver Detalles
                                 </button>
                             </a>
                         </td>
                         <td class="BotonDetalles">
-                            <a href="EditarPedido.php">
+                            <a href="EditarPedido.php?Pedido=<?php echo $PedAdmin->GetIdPedido(); ?>">
                                 <button class="EstiloBotonDetalles">
                                     Editar
                                 </button>
                             </a>
                         </td>
                     </tbody>
+                    <?php } ?>
                 </table>
             </div>
         </div>

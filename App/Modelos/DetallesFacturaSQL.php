@@ -1,9 +1,5 @@
 <?php
 
-require_once("../BaseDatos/Conexion.php");
-require_once("ClasesObj/DetallesFactura.php");
-require_once("FuncionesAparte/Comprobaciones.php");
-
 class DetallesFacturaSQL{
 
     public static function InsertarDetalle($Detalle){
@@ -23,7 +19,7 @@ class DetallesFacturaSQL{
             $sentencia=null;
             $Conexion=null;
         
-            Comprobaciones::ActualizacionCamposVacios($IdFactura);
+            Comprobaciones::ActualizacionCampos($IdFactura);
 
             return true;
         } catch (PDOException $e) {
@@ -32,17 +28,30 @@ class DetallesFacturaSQL{
         }
     }
 
-    public static function ListarFacturas($IdFactura){
+    public static function ListarDetalleFacturas($IdFactura,$IdUser=null){
 
         $ListaDetalles=array();
         $IdFactura=$IdFactura;
+        $IdUser=$IdUser;
         
 
         try {
             $Conexion=Conexion::getConexion();
 
-            $sentencia = $Conexion->prepare("SELECT `productos`.`Nombre`, `detallefactura`.`Precio`,`detallefactura`.`Cantidad`,`detallefactura`.`PrecioTotal`,`detallefactura`.`IdFactura` FROM `detallefactura` JOIN `productos` ON `productos`.`IdProducto` = `detallefactura`.`IdProducto` WHERE `detallefactura`.`IdFactura` = :IdFactura;");
-            $sentencia->bindParam(':IdFactura', $IdFactura);
+            if ($IdUser==null) {
+
+                $sentencia = $Conexion->prepare("SELECT `productos`.`Nombre`, `detallefactura`.`Precio`,`detallefactura`.`Cantidad`,`detallefactura`.`PrecioTotal`,`detallefactura`.`IdFactura` FROM `detallefactura` JOIN `productos` ON `productos`.`IdProducto` = `detallefactura`.`IdProducto` WHERE `detallefactura`.`IdFactura` = :IdFactura;");
+                $sentencia->bindParam(':IdFactura', $IdFactura);
+
+            }else {
+
+                $sentencia = $Conexion->prepare("SELECT `productos`.`Nombre`, `detallefactura`.`Precio`, `detallefactura`.`Cantidad`, `detallefactura`.`PrecioTotal`, `detallefactura`.`IdFactura` FROM `detallefactura` JOIN `productos` ON `productos`.`IdProducto` = `detallefactura`.`IdProducto` JOIN `factura` ON `factura`.`IdFactura` = `detallefactura`.`IdFactura` WHERE `detallefactura`.`IdFactura` = :IdFactura AND `factura`.`IdUsuario` = :IdUsuario;");
+                $sentencia->bindParam(':IdFactura', $IdFactura);
+                $sentencia->bindParam(':IdUsuario', $IdUser);
+
+            }
+
+            
 
             
                 $sentencia->execute();

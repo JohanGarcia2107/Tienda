@@ -1,12 +1,8 @@
 <?php
-require_once("../BaseDatos/Conexion.php");
-require_once("ClasesObj/Facturas.php");
-require_once("PedidosSQL.php");
 
 class FacturasSQL{
 
     public static function InsertarFactura($Factura){
-        require("../FuncionesAparte/Comprobaciones.php");
         
         $Direccion=$Factura->GetDireccion();
         $MedioDePago=$Factura->GetMedioDePago();
