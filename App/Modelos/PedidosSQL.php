@@ -236,7 +236,7 @@ class PedidosSQL {
         try {
             $Conexion=Conexion::getConexion();
 
-            $sentencia = $Conexion->prepare("SELECT `pedidos`.`IdPedido`, `pedidos`.`IdFactura`, `usuarios`.`Nombre`, `pedidos`.`MontoAPagar`, `pedidos`.`Fecha`, `pedidos`.`Direccion`, `estadopedidos`.`NombreEstado` FROM `pedidos` JOIN `usuarios` ON `usuarios`.`IdUsuario` = `pedidos`.`IdUser` JOIN `estadopedidos` ON `estadopedidos`.`IdEstado` = `pedidos`.`Estado` WHERE `pedidos`.`IdPedido` = :IdPedido;");
+            $sentencia = $Conexion->prepare("SELECT `pedidos`.`IdPedido`, `pedidos`.`IdFactura`, `usuarios`.`Nombre`, `pedidos`.`MontoAPagar`, `pedidos`.`Fecha`, `pedidos`.`Direccion`, `estadopedidos`.`IdEstado` FROM `pedidos` JOIN `usuarios` ON `usuarios`.`IdUsuario` = `pedidos`.`IdUser` JOIN `estadopedidos` ON `estadopedidos`.`IdEstado` = `pedidos`.`Estado` WHERE `pedidos`.`IdPedido` = :IdPedido;");
             $sentencia->bindParam(':IdPedido', $IdPedido);
             
             $sentencia->execute();
@@ -251,7 +251,7 @@ class PedidosSQL {
                     $Pedido->SetMontoAPagar($Fila['MontoAPagar']);
                     $Pedido->SetFecha($Fila['Fecha']);
                     $Pedido->SetDireccion($Fila['Direccion']);
-                    $Pedido->SetIdEstado($Fila['NombreEstado']);
+                    $Pedido->SetIdEstado($Fila['IdEstado']);
 
                 return $Pedido;
             }else{

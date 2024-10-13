@@ -31,24 +31,38 @@
                         <th class="Encabezado">IdFactura</th>
                         <th class="Encabezado">Dirección</th>
                         <th class="Encabezado">Medio de pago</th>
-                        <th class="Encabezado">Fecha</th>
+                        <th class="Encabezado">Fecha de compra</th>
                         <th class="Encabezado">Total a pagar</th>
                         <th class="Encabezado">Iva</th>
                         <th class="Encabezado">Pago Final</th>
                         <th class="Encabezado">Usuario</th>
                     </tr>
                 </thead>
-                <tbody class="ContenidoListados">
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                    <td class="ItemList">a</td>
-                </tbody>
+                <?php foreach ($ListaFacturaAdmin as $FacAdmin) { ?>
+                    <tbody class="ContenidoListados">
+                        <td class="ItemList"><?php echo $FacAdmin->GetIdFactura(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetDireccion(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetMedioDePago(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetFecha(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetTotalAPagar(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetIVA(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetTotalAPagarConIVA(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetIdUsuario(); ?></td>
+                        <td class="BotonDetalles">
+                            <a href="Detalles.php?Factura=<?php echo $FacAdmin->GetIdFactura(); ?>">
+                                <button class="EstiloBotonDetalles">
+                                    Ver Detalles
+                                </button>
+                            </a>
+                        </td>
+                    </tbody>
+                    <?php } ?>
             </table>
+            <?php if (empty($ListaFacturaAdmin)) {?>
+                    <div style="margin: auto;" class="data_container">
+                        <p style="margin: auto; color:aliceblue" class="Titulo1" >No haz hecho compras</p>
+                    </div>
+                    <?php } ?>
         </div>
     </div>
 </div>

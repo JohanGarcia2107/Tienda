@@ -32,7 +32,7 @@
                             <th class="Encabezado">Id Factura</th>
                             <th class="Encabezado">Usuario</th>
                             <th class="Encabezado">Monto a Pagar</th>
-                            <th class="Encabezado">Fecha</th>
+                            <th class="Encabezado">Fecha de entrega</th>
                             <th class="Encabezado">Direccion</th>
                             <th class="Encabezado">Estado</th>
                             <th class="Encabezado">Detalles</th>
