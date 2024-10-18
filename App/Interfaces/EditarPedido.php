@@ -22,6 +22,10 @@
         <div class="InicioSesionContainer">
             <div class="InicioDeSesion">
                 <form class="InSe" action="EditarPedido.php?Pedido=<?php echo $IdPedido ?>" method="post">
+                    <?php if ($Salida!=null) {
+                        echo "$Salida";
+                        echo "$Salida2";
+                    } ?>
                     <label class="TituloForm" for="IdPedido">Id Pedido</label>
                         <input class="InputForm" type="number" name="IdPedido" id="IdPedido" value="<?php echo $IdPedido ?>" readonly>
 
@@ -37,8 +41,8 @@
                         <label class="TituloForm" for="Fecha">Fecha de Entrega</label>
                             <input class="InputForm" type="date" name="Fecha" id="Fecha" value="<?php echo $Fecha ?>" required>
 
-                        <label class="TituloForm" for="Nombre">Direccion</label>
-                            <input class="InputForm" type="text" name="Nombre" id="Nombre" value="<?php echo $Direccion ?>">
+                        <label class="TituloForm" for="Direccion">Direccion</label>
+                            <input class="InputForm" type="text" name="Direccion" id="Direccion" value="<?php echo $Direccion ?>">
 
                         <label class="TituloForm" for="Tipo_de_Usuario">Estado</label>
                             <select class="SelectForm" name="Estado" id="Estado">

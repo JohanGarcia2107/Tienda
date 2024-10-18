@@ -44,7 +44,7 @@
                         <td class="ItemList"><?php echo $PedAdmin->GetIdPedido(); ?></td>
                         <td class="ItemList"><?php echo $PedAdmin->GetIdFactura(); ?></td>
                         <td class="ItemList"><?php echo $PedAdmin->GetIdUsuario(); ?></td>
-                        <td class="ItemList"><?php echo $PedAdmin->GetMontoAPagar(); ?></td>
+                        <td class="ItemList"><?php echo $PedAdmin->GetMontoAPagar(); ?> COP</td>
                         <td class="ItemList"><?php echo $PedAdmin->GetFecha(); ?></td>
                         <td class="ItemList"><?php echo $PedAdmin->GetDireccion(); ?></td>
                         <td class="ItemList"><?php echo $PedAdmin->GetIdEstado(); ?></td>

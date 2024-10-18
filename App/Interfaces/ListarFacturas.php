@@ -44,9 +44,9 @@
                         <td class="ItemList"><?php echo $FacAdmin->GetDireccion(); ?></td>
                         <td class="ItemList"><?php echo $FacAdmin->GetMedioDePago(); ?></td>
                         <td class="ItemList"><?php echo $FacAdmin->GetFecha(); ?></td>
-                        <td class="ItemList"><?php echo $FacAdmin->GetTotalAPagar(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetTotalAPagar(); ?> COP</td>
                         <td class="ItemList"><?php echo $FacAdmin->GetIVA(); ?></td>
-                        <td class="ItemList"><?php echo $FacAdmin->GetTotalAPagarConIVA(); ?></td>
+                        <td class="ItemList"><?php echo $FacAdmin->GetTotalAPagarConIVA();?> COP</td>
                         <td class="ItemList"><?php echo $FacAdmin->GetIdUsuario(); ?></td>
                         <td class="BotonDetalles">
                             <a href="Detalles.php?Factura=<?php echo $FacAdmin->GetIdFactura(); ?>">

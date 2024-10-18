@@ -12,10 +12,23 @@ class Comprobaciones{
     public static function FechaFutura(){
         $FechaActual = Comprobaciones::FechaActual();
 
-        $FechaFutura = strtotime('+15 day', strtotime($FechaActual)); 
+        $FechaFutura = strtotime('+30 day', strtotime($FechaActual)); 
         $FechaFutura = date('Y-m-d', $FechaFutura);
 
         return $FechaFutura;
+    }
+
+    public static function ComprobarFecha($FechaPuesta, $FechaPaPoner){
+        $FechaPuesta = strtotime($FechaPuesta);
+        $FechaPaPoner = strtotime($FechaPaPoner);
+
+        if ($FechaPuesta>$FechaPaPoner) {
+            $Resultado = false;
+        }else{
+            $Resultado = true;
+        }
+
+        return $Resultado;
     }
 
     public static function Vacios ($Input){

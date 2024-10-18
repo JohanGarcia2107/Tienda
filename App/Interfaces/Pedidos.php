@@ -43,7 +43,7 @@
                         <td class="ItemList"><?php echo $Ped->GetIdPedido(); ?></td>
                         <td class="ItemList"><?php echo $Ped->GetIdFactura(); ?></td>
                         <td class="ItemList"><?php echo $Ped->GetIdUsuario(); ?></td>
-                        <td class="ItemList"><?php echo $Ped->GetMontoAPagar(); ?></td>
+                        <td class="ItemList"><?php echo $Ped->GetMontoAPagar(); ?> COP</td>
                         <td class="ItemList"><?php echo $Ped->GetFecha(); ?></td>
                         <td class="ItemList"><?php echo $Ped->GetDireccion(); ?></td>
                         <td class="ItemList"><?php echo $Ped->GetIdEstado(); ?></td>

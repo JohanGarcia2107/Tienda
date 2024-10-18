@@ -9,8 +9,6 @@ require_once("../../App/Controladores/PerfilController.php");
 
 require_once("../../App/Controladores/ActualizarDatosController.php");
 
-require_once("../../App/Controladores/PerfilController.php");
-
 require_once("../../App/Interfaces/ActualizarDatos.php");
 
 ?>

@@ -22,7 +22,7 @@
         <div class="InicioSesionContainer">
             <div class="InicioDeSesion">
     
-                    <form class="InSe" action="" method="post" >
+                    <form class="InSe" action="ActualizarDatos.php" method="post" >
 
                         <label class="TituloForm" for="ActualizarNombre">Nombre de Usuario</label>
                             <input class="InputForm" type="text" name="ActualizarNombre" id="ActualizarNombre" value="<?php echo $Nombre ?>" readonly>
