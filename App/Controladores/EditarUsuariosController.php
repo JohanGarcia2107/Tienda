@@ -8,10 +8,7 @@ if ($_SESSION) {
             $IdUser = $_GET['IdUsuario'];
             $NombreUsusario = $_POST['EditarUsuarioNombre'];
             $Telefono = $_POST['EditarUsuarioTelefono'];
-            $Contrasena = $_POST['EditarUsuarioContraseña'];
-            $Contrasena2 = $_POST['EditarUsuarioContraseña2'];
                 if (Comprobaciones::Vacios($NombreUsusario) && Comprobaciones::Vacios($Telefono) && (Comprobaciones::Vacios($Contrasena)) && (Comprobaciones::Vacios($Contrasena2))) {
-                        if ($Contrasena==$Contrasena2) {
                             $Usuario = new Usuarios($IdUser,$NombreUsusario,null, $Telefono, $Contrasena);
                             $ConfirmacionRegistro = UsuarioSQL::ActualizaUsuario($Usuario);
                             if ($ConfirmacionRegistro=="Actualizado Correctamente") {
@@ -22,14 +19,10 @@ if ($_SESSION) {
                                 $Salida ="<script> alert('Actualizacion fallida, Correo ya registrado o datos faltantes')</script>";
                                 $Salida2 = "<p> Actualizacion fallida, Correo ya registrado o datos faltantes </p>";
                             }
-                        }else {
-                            $Salida ="<script> alert('La confirmacion de la contraseña es diferente de la contraseña ingresada')</script>";
-                            $Salida2 = "<p> La confirmacion de la contraseña es diferente de la contraseña ingresada </p>";
-                        }
                     
                 }else {
-                    $Salida ="<script> alert('No pueden haber campos vacios')</script>";
-                    $Salida2 = "<p> No pueden haber campos vacios </p>";
+                    $Salida3 ="<script> alert('No pueden haber campos vacios')</script>";
+                    $Salida4 = "<p> No pueden haber campos vacios </p>";
                 }
         }
 }else {

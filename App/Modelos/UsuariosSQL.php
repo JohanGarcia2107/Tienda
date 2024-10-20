@@ -117,19 +117,53 @@ class UsuarioSQL{
         $IdUsuario=$Usuario->GetIdUsuario();
         $NombreUsusario=$Usuario->GetNombreUsuario();
         $Telefono=$Usuario->GetTelefono();
-        $Contrasena=$Usuario->GetContrasena();
 
         try {
             $Conexion=Conexion::getConexion();
 
-            $sentencia = $Conexion->prepare("UPDATE `usuarios` SET `Nombre` = :NombreUsusario, `Telefono` = :Telefono, `Contrasena` = :Contrasena WHERE `usuarios`.`IdUsuario` = :IdUsuario;");
+            $sentencia = $Conexion->prepare("UPDATE `usuarios` SET `Nombre` = :NombreUsusario, `Telefono` = :Telefono WHERE `usuarios`.`IdUsuario` = :IdUsuario;");
             $sentencia->bindParam(':IdUsuario', $IdUsuario);
             $sentencia->bindParam(':NombreUsusario', $NombreUsusario);
             $sentencia->bindParam(':Telefono', $Telefono);
-            $sentencia->bindParam(':Contrasena', $Contrasena);
             
             if ($sentencia->execute()) {
                 return "Actualizado Correctamente";
+            }else{
+                $e=new PDOException;
+                echo 'Error: ' . $e->getMessage();
+                return false;
+            }
+
+
+            $sentencia=null;
+            $Conexion=null;
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+
+    }
+
+    public static function ActualizarContrasena($Usuario,$ContrasenaNueva){
+        $IdUsuario=$Usuario->GetIdUsuario();
+        $ContrasenaActual=$Usuario->GetContrasena();
+        $ContrasenaNueva=$ContrasenaNueva;
+
+        try {
+            $Conexion=Conexion::getConexion();
+
+            $sentencia = $Conexion->prepare("UPDATE `usuarios` SET `Contrasena` = :ContrasenaNueva WHERE `usuarios`.`IdUsuario` = :IdUsuario AND `usuarios`.`Contrasena` = :Contrasena;");
+            $sentencia->bindParam(':IdUsuario', $IdUsuario);
+            $sentencia->bindParam(':Contrasena', $ContrasenaActual);
+            $sentencia->bindParam(':ContrasenaNueva', $ContrasenaNueva);
+            
+            if ($sentencia->execute()) {
+                $Fila=$sentencia->fetch(PDO::FETCH_ASSOC);
+                if ($Fila) {
+                    return true;
+                }else {
+                    return false;
+                }
             }else{
                 $e=new PDOException;
                 echo 'Error: ' . $e->getMessage();

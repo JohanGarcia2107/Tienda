@@ -13,7 +13,7 @@ body {
     --principal-color:#003972 ;
     --secondary-color:#d467de ;
     --third-color:rgb(210, 210, 251);
-    --four-color:rgb(137, 56, 184);
+    --four-color:rgb(168, 100, 208);
     display: flex;
     flex-direction: row;
     font-family: "Montserrat";
@@ -1161,4 +1161,26 @@ select{
         width: clamp(300px,  100%, 100px);
         max-width: 80%;
     }
+}
+
+.valid{
+    font-size: small;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+
+input:invalid:not(:placeholder-shown), 
+input:valid:not(:placeholder-shown) {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+input:invalid:not(:placeholder-shown) + p {
+    color: #a20e0e;
+}
+input:invalid ~ button[type="submit"] {
+    opacity: .6;
+    pointer-events: none;
 }

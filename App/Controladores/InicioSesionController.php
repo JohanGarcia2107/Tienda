@@ -8,7 +8,7 @@ if ($_SESSION) {
 }
 if ($_POST!=null) {
     $Correo = $_POST['MailInicioSesion'];
-    $Contrasena = $_POST['ContrasenaInicioSesion'];
+    $Contrasena = hash('ripemd160', $_POST['ContrasenaInicioSesion']);
     $Usuario = UsuarioSQL::InicioSesion($Correo, $Contrasena);
     if ($Usuario == "Usuario inexistente") {
         $Salida = "<script> alert('Error en la contraseña o correo')</script>";

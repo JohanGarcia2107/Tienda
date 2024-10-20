@@ -15,17 +15,21 @@ if ($_POST) {
     if (Comprobaciones::Vacios($NombreUsusario) && (Comprobaciones::Vacios($Email)) && Comprobaciones::Vacios($Telefono) && (Comprobaciones::Vacios($Contrasena)) && (Comprobaciones::Vacios($Contrasena2))) {
         if(ComprobarMail::VerificarSiMailExiste($Email)){
             if ($Contrasena==$Contrasena2) {
-                $Usuario = new Usuarios(null,$NombreUsusario, $Email, $Telefono, $Contrasena);
-                $ConfirmacionRegistro = UsuarioSQL::Registro($Usuario);
-                if ($ConfirmacionRegistro=="Registro Exitoso") {
-                    echo "<script> alert('Registro exitoso, ya puedes iniciar sesión')</script>";
-                    echo "<script> window.location.href='InicioSesion.php';</script>";
-                }else {
-                    $Salida ="<script> alert('Registro fallido, Correo ya registrado o datos faltantes')</script>";
-                    $Salida2 = "<p> Registro fallido, Correo ya registrado o datos faltantes </p>";
+                if (strlen($Contrasena)>=8) {
+                    $Contrasena=hash('ripemd160', $_POST['ContraseñaRegistro']);
+                    $Usuario = new Usuarios(null,$NombreUsusario, $Email, $Telefono, $Contrasena);
+                    $ConfirmacionRegistro = UsuarioSQL::Registro($Usuario);
+                    if ($ConfirmacionRegistro=="Registro Exitoso") {
+                        echo "<script> alert('Registro exitoso, ya puedes iniciar sesión')</script>";
+                        echo "<script> window.location.href='InicioSesion.php';</script>";
+                    }else {
+                        $Salida ="<script> alert('Registro fallido, Correo ya registrado o datos faltantes')</script>";
+                        $Salida2 = "<p> Registro fallido, Correo ya registrado o datos faltantes </p>";
+                    }
+                }else{
+                    $Salida ="<script> alert('La contraseña debe tener al menos 8 caracteres')</script>";
+                    $Salida2 = "<p> La contraseña debe tener al menos 8 caracteres </p>";
                 }
-                
-                
             }else {
                 $Salida ="<script> alert('La confirmacion de la contraseña es diferente de la contraseña ingresada')</script>";
                 $Salida2 = "<p> La confirmacion de la contraseña es diferente de la contraseña ingresada </p>";
@@ -35,8 +39,8 @@ if ($_POST) {
             $Salida2 = "<p> El mail usado no existe, asegurese de que este escrito correctamente o que la direccion sea valida </p>";
         }
     }else {
-        $Salida ="<script> alert('No pueden haber campos vacios')</script>";
-            $Salida2 = "<p> No pueden haber campos vacios </p>";
+        $Salida ="<script> alert('No pueden haber campos vacios y la contraseña debe tener 8 caracteres')</script>";
+            $Salida2 = "<p> No pueden haber campos vacios y la contraseña debe tener 8 caracteres </p>";
     }
     
 }

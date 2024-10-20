@@ -35,10 +35,11 @@
                         <input class="InputForm" type="number" name="TelefonoRegistro" id="TelefonoRegistro" placeholder="123456789101" required>
                     
                     <label class="TituloForm" for="ContraseñaRegistro"> Contraseña</label>
-                        <input class="InputForm" type="password" name="ContraseñaRegistro" id="ContraseñaRegistro" required>
+                        <input class="InputForm" type="password" name="ContraseñaRegistro" id="ContraseñaRegistro" minlength="8" required>
 
                         <label class="TituloForm" for="ContraseñaRegistro"> Vuelve a ingresar tu contraseña</label>
-                        <input class="InputForm" type="password" name="Contraseña2Registro" id="ContraseñaRegistro" required>
+                        <input class="InputForm" type="password" name="Contraseña2Registro" id="ContraseñaRegistro" minlength="8" required>
+                        <p class="valid">La contraseña debe contener un minimo de 8 caracteres</p>
                     
                     <input class="SendForm" type="submit" value="Registrarse" >
                     <div class="Terms">  
