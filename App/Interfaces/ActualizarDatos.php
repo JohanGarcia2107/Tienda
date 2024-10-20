@@ -50,13 +50,13 @@
                     } ?>
 
                         <label class="TituloForm" for="ContrasenaActual">Contraseña  Actual</label>
-                            <input class="InputForm" type="password" name="ContrasenaActual" id="ContrasenaActual" required>
+                            <input class="InputForm" type="password" name="ContrasenaActual" id="ContrasenaActual" placeholder="Contraseña Actual" required>
 
                         <label class="TituloForm" for="ContrasenaNueva">Contraseña Nueva</label>
-                            <input class="InputForm" type="password" name="ContrasenaNueva" id="ContrasenaNueva" minlength="8" required>
+                            <input class="InputForm" type="password" name="ContrasenaNueva" id="ContrasenaNueva" minlength="8" placeholder="Contraseña Nueva" required>
 
                         <label class="TituloForm" for="ContrasenaNueva2">Repita la contraseña nueva</label>
-                            <input class="InputForm" type="password" name="ContrasenaNueva2" id="ContrasenaNueva2" minlength="8" required>
+                            <input class="InputForm" type="password" name="ContrasenaNueva2" id="ContrasenaNueva2" minlength="8" placeholder="Repita la contraseña Nueva" required>
                             <p class="valid">La contraseña debe contener un minimo de 8 caracteres</p>
                         
                                 <input class="SendForm" type="submit" value="Actualizar" >

@@ -58,6 +58,6 @@
             "install-path": "../zytzagoo/smtp-validate-email"
         }
     ],
-    "dev": true,
+    "dev": false,
     "dev-package-names": []
 }

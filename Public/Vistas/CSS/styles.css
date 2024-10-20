@@ -1177,10 +1177,10 @@ input:valid:not(:placeholder-shown) {
     background-repeat: no-repeat;
     background-position: calc(100% - 10px);
 }
-input:invalid:not(:placeholder-shown) + p {
+input:invalid:not(:placeholder-shown) + .valid {
     color: #a20e0e;
 }
-input:invalid ~ button[type="submit"] {
+input:invalid ~ input[type="submit"] {
     opacity: .6;
     pointer-events: none;
 }
