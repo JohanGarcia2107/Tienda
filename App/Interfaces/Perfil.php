@@ -37,43 +37,36 @@
                 </form>
 
                 <div class="Botones">
+                    <?php if ($_SESSION['TipoId']==1) { ?>
+                        <a href="ActualizarDatos.php">
+                            <button class="ActualizarDatos">Actualizar Datos</button>
+                        </a>
+                        <a href="ListarProductos.php">
+                        <button class="ActualizarDatos">Productos</button>
+                        </a>
+                        <a href="ListarUsuarios.php">
+                        <button class="ActualizarDatos">Usuarios</button>
+                        </a>
+                        <a href="ListarFacturas.php">
+                        <button class="ActualizarDatos">Facturas</button>
+                        </a>
+                        <a href="ListarPedidos.php">
+                        <button class="ActualizarDatos">Pedidos</button>
+                        </a>
+                    <?php } ?>
 
-                <a href="ActualizarDatos.php">
-                    <button class="ActualizarDatos">
-                        Actualizar Datos
-                    </button>
-                </a>
-                <a href="Facturas.php">
-                    <button class="ActualizarDatos">
-                        Facturas
-                    </button>
-                </a>
-                <a href="Pedidos.php">
-                    <button class="ActualizarDatos">
-                        Pedidos
-                    </button>
-                </a>
+                    <?php if ($_SESSION['TipoId']==2) { ?>
+                        <a href="ActualizarDatos.php">
+                            <button class="ActualizarDatos">Actualizar Datos</button>
+                        </a>
+                        <a href="Facturas.php">
+                            <button class="ActualizarDatos">Facturas</button>
+                        </a>
+                        <a href="Pedidos.php">
+                            <button class="ActualizarDatos">Pedidos</button>
+                        </a>
+                    <?php } ?>
 
-                    <a href="ListarProductos.php">
-                        <button class="ActualizarDatos">
-                            Productos
-                        </button>
-                    </a>
-                    <a href="ListarUsuarios.php">
-                        <button class="ActualizarDatos">
-                            Usuarios
-                        </button>
-                    </a>
-                    <a href="ListarFacturas.php">
-                        <button class="ActualizarDatos">
-                            Facturas
-                        </button>
-                    </a>
-                    <a href="ListarPedidos.php">
-                        <button class="ActualizarDatos">
-                            Pedidos
-                        </button>
-                    </a>
                 </div>
         </div>
     </div>

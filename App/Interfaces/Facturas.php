@@ -54,7 +54,7 @@
                     </tbody>
                     <?php } ?>
             </table>
-            <?php if (empty($ListaPed)) {?>
+            <?php if (empty($ListaFactura)) {?>
                     <div style="margin: auto;" class="data_container">
                         <p style="margin: auto; color:aliceblue" class="Titulo1" >No haz hecho compras</p>
                     </div>

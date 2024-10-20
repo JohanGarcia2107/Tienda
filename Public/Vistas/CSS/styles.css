@@ -537,7 +537,7 @@ h1{
 }
 
 .red img{
-    width: 150px;
+    width: 100px;
 }
 
 .red i{
@@ -845,12 +845,20 @@ select{
 /*Perfil*/
 .ActualizarDatos{
     border-radius: 20px;
-    padding: 5px;
     background-color: var(--secondary-color);
     color: #ffffff;
     min-width: 100%;
     padding: 5px;
     font-size: 1.2rem;
+    padding: 12px;
+}
+
+.ActualizarDatos:hover{
+    border-radius: 20px;
+    background-color: #dfd6f1;
+    color: var(--secondary-color) ;
+    filter: drop-shadow(0 0 15px rgb(252, 252, 252));
+    transition: all 0.5s;
 }
 
 /*Ver Factura*/
@@ -908,6 +916,8 @@ select{
 
 .Botones{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -1229,4 +1239,8 @@ input:invalid:not(:placeholder-shown) + p {
 input:invalid ~ button[type="submit"] {
     opacity: .6;
     pointer-events: none;
+}
+
+.IMGListadoProd{
+    width: 100px;
 }

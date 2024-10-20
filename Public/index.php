@@ -209,7 +209,7 @@ session_start();
         </form>
         <div class="redes">
             <a class="red" href="https://www.facebook.com/3DPrintGlobin/" target="_blank"><img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" alt="facebook"><i>Facebook</i></a>
-            <a class="red" href="https://www.facebook.com/3DPrintGlobin/" target="_blank"><img src="https://img.icons8.com/?size=100&id=vgHlr0wYdqNm&format=png&color=ffffff" alt="Pantreon"><i>Patreon</i></a>
+            <a class="red" href="https://www.patreon.com/3DPrintGlobin" target="_blank"><img src="https://img.icons8.com/?size=100&id=vgHlr0wYdqNm&format=png&color=ffffff" alt="Pantreon"><i>Patreon</i></a>
             <a class="red" href="https://wa.me/573142309876" target="_blank"><img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" alt="WhatsApp"><i>+57 3142309876</i></a>
             <a class="red" href="mailto:cubrimage@hotmail.com" target="_blank"><img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ffffff" alt="Mail"><i>cubrimage@hotmail.com</i></a>
         </div>
