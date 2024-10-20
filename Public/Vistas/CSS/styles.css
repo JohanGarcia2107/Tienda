@@ -13,7 +13,7 @@ body {
     --principal-color:#003972 ;
     --secondary-color:#d467de ;
     --third-color:rgb(210, 210, 251);
-    --four-color:rgb(168, 100, 208);
+    --four-color:rgb(151, 62, 202);
     display: flex;
     flex-direction: row;
     font-family: "Montserrat";
@@ -633,11 +633,11 @@ td{
 .r{
     text-decoration: none;
     height: fit-content;
-    width: 100%;
+    max-width: 100%;
 }
 
 .Prod{
-    max-height: 300px;
+    max-height: 500px;
     max-width: 100%;
     border: 2px solid black;
     background-color: var(--third-color);
@@ -662,7 +662,6 @@ td{
     flex-direction: row;
     align-items: center;
     gap: 50px;
-    padding-right: 20px;
 }
 
 .DirIMGProd{
@@ -759,6 +758,7 @@ td{
     font-size: 2rem;
     padding: 0 5px 5px 5px;
     text-align: center;
+    text-wrap: wrap;
 }
 
 /*Inicio de sesion*/
@@ -1110,7 +1110,7 @@ select{
 
     .ProductosContainer{
         max-width: 100%;
-        grid-auto-rows: 250px;
+        grid-auto-rows: fit-content;
         gap: 100px;
     }
     
@@ -1161,6 +1161,52 @@ select{
         width: clamp(300px,  100%, 100px);
         max-width: 80%;
     }
+
+    .NombreProd{
+        font-size: clamp(0.5rem, 100%, 2rem);
+        padding: 0 5px 5px 5px;
+        text-align: center;
+        text-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width:355px ) {
+    .Prod{
+        padding: 0.5px;
+        margin: 0.5px;
+    
+    }
+
+    .ProductosContainer{
+        padding: 20px 0;
+    }
+
+    .r{
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .Prod{
+        padding: 0;
+        margin: 0;
+    }
+
+    .P1Prod{
+        padding: 0;
+        margin: 0;
+    }
+
+    .P2Prod{
+        padding: 0;
+        margin: 0;
+    }
+
+    .NombreProd{
+        padding: 0;
+    }
+
 }
 
 .valid{
@@ -1177,10 +1223,10 @@ input:valid:not(:placeholder-shown) {
     background-repeat: no-repeat;
     background-position: calc(100% - 10px);
 }
-input:invalid:not(:placeholder-shown) + .valid {
+input:invalid:not(:placeholder-shown) + p {
     color: #a20e0e;
 }
-input:invalid ~ input[type="submit"] {
+input:invalid ~ button[type="submit"] {
     opacity: .6;
     pointer-events: none;
 }

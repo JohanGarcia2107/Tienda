@@ -22,6 +22,11 @@
         <div class="InicioSesionContainer">
             <div class="InicioDeSesion">
                 <form class="InSe" action="EditarProductos.php?IdProd=<?php echo $IdProd; ?>" enctype="multipart/form-data" method="post">
+                    <h2>Editar Producto</h2>
+                    <?php if ($Salida!=null) {
+                        echo "$Salida";
+                        echo "$Salida2";
+                    } ?>
                     <label class="TituloForm" for="IdProducto">Id Producto</label>
                         <input class="InputForm" type="number" name="EditarIdProducto" id="IdProducto" value="<?php echo $IdProd ?>" readonly>
 

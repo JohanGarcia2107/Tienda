@@ -55,6 +55,10 @@
                                 <form class="MasCarrito" action="InicioSesion.php">
                                 <input style="padding: 10px;" class="ACarrito" type="submit" value="Inicia Sesion para comprar">
                             </form>
+                            <?php }elseif($_SESSION['TipoId']==1){?>
+                                <form class="MasCarrito" action="ListarProductos.php">
+                                    <input style="padding: 10px;" class="ACarrito" type="submit" value="Administrador">
+                                </form>
                             <?php }elseif ($ProductoEnCarrito == true) { ?>
                             <form class="MasCarrito" action="VistaIndividualProd.php?IdProd=<?php echo $IdProd ?>" method="post">
                                     <input type="hidden" name="ProductoABorrar" value="<?php echo $IdProd ?>">
