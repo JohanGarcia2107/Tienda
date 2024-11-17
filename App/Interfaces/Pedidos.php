@@ -16,7 +16,7 @@
     <header>
         <h1>CUBRIMAGEN</h1>
         <div  class="Logotipo2">
-                <form class="BarraBusqueda" action="ListarPedidos.php" method="get">
+                <form class="BarraBusqueda" action="Pedidos.php" method="get">
                     <input class="Input_Search" type="search" name="BuscarPedido" placeholder="IdFactura...">
                     <button class="Buscar" type="submit"><span class="material-symbols-outlined">search</span></button>
                 </form>

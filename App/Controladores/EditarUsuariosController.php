@@ -8,13 +8,13 @@ if ($_SESSION) {
             $IdUser = $_GET['IdUsuario'];
             $NombreUsusario = $_POST['EditarUsuarioNombre'];
             $Telefono = $_POST['EditarUsuarioTelefono'];
-                if (Comprobaciones::Vacios($NombreUsusario) && Comprobaciones::Vacios($Telefono) && (Comprobaciones::Vacios($Contrasena)) && (Comprobaciones::Vacios($Contrasena2))) {
-                            $Usuario = new Usuarios($IdUser,$NombreUsusario,null, $Telefono, $Contrasena);
+                if (Comprobaciones::Vacios($NombreUsusario) && Comprobaciones::Vacios($Telefono)) {
+                            $Usuario = new Usuarios($IdUser,$NombreUsusario,null, $Telefono);
                             $ConfirmacionRegistro = UsuarioSQL::ActualizaUsuario($Usuario);
                             if ($ConfirmacionRegistro=="Actualizado Correctamente") {
                                 echo "<script> alert('Actualizado Correctamente')</script>";
                                 echo "<p> Actualizado Correctamente</p>";
-                                echo "<script> window.location.href='ListarUsuarios.php';</script>";
+                                echo "<script> window.location.href='ListarUsuarios.php?BuscarUser=$IdUser';</script>";
                             }else {
                                 $Salida ="<script> alert('Actualizacion fallida, Correo ya registrado o datos faltantes')</script>";
                                 $Salida2 = "<p> Actualizacion fallida, Correo ya registrado o datos faltantes </p>";

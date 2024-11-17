@@ -17,13 +17,16 @@
             <h1>CUBRIMAGEN</h1>
             <div  class="Logotipo2">
                 <form class="BarraBusqueda" action="" method="">
-                    <input class="Input_Search" type="search" name="Buscar" placeholder="Buscar...">
+                    <input class="Input_Search" type="search" name="BuscarFacturaAdmin" placeholder="IdFactura o NombreUser">
                     <button class="Buscar" type="submit"><span class="material-symbols-outlined">search</span></button>
                 </form>
                 <img class="LogoTipoIMG2" src="IMGs/LogoTexto.png" alt="Logotipo_Cubrimagen">
             </div>
         </header>
     <div class="TableContainer">
+    <?php if ($Aviso!=null) {
+        echo $Aviso;
+    }?>
         <div class="Tables">
             <table class="Listado">
                 <thead class="Encabezados">

@@ -5,17 +5,26 @@ session_start();
 if ($_SESSION['TipoId'] == "1") {
     if ($_GET) {
         $BuscarProdAdmin = $_GET['BuscarProductoAdmin'];
-        $ListaProdAdmin = ProductosSQL::ListarProductos($BuscarProdAdmin);
+        if (Comprobaciones::Vacios($BuscarProdAdmin)) {
+            $ListaProdAdmin = ProductosSQL::ListarProductos($BuscarProdAdmin);
+        }else{
+            $ListaProdAdmin = ProductosSQL::ListarProductos();
+        }
+        
 
         if (isset($_GET['DesActivarProd'])) {
             $IdProdAdmin = $_GET['DesActivarProd'];
-            ProductosSQL::EliminarProducto($IdProdAdmin);
+            if(Comprobaciones::Vacios($IdProdAdmin)){
+                ProductosSQL::EliminarProducto($IdProdAdmin);
+            }
             header("Location: ListarProductos.php");
         }
 
         if (isset($_GET['ActivarProd'])) {
             $IdProdAdmin = $_GET['ActivarProd'];
-            ProductosSQL::HabilitarProducto($IdProdAdmin);
+            if(Comprobaciones::Vacios($IdProdAdmin)){
+                ProductosSQL::HabilitarProducto($IdProdAdmin);
+            }
             header("Location: ListarProductos.php");
         }
 

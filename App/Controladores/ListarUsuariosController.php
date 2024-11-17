@@ -5,17 +5,26 @@ session_start();
 if ($_SESSION['TipoId'] == "1") {
     if ($_GET) {
         $BuscarUser = $_GET['BuscarUser'];
-        $ListaUsers = UsuarioSQL::ListarUsuarios($BuscarUser);
+        if (Comprobaciones::Vacios($BuscarUser)) {
+            $ListaUsers = UsuarioSQL::ListarUsuarios($BuscarUser);
+        }else{
+            $ListaUsers = UsuarioSQL::ListarUsuarios();
+        }
+        
 
         if (isset($_GET['DesActivar'])) {
             $id = $_GET['DesActivar'];
-            UsuarioSQL::EliminarUsuario($id);
+            if(Comprobaciones::Vacios($id)){
+                UsuarioSQL::EliminarUsuario($id);
+            }
             header("Location: ListarUsuarios.php");
         }
 
         if (isset($_GET['Activar'])) {
             $id = $_GET['Activar'];
-            UsuarioSQL::HabilitarUsuario($id);
+            if(Comprobaciones::Vacios($id)){
+                UsuarioSQL::HabilitarUsuario($id);
+            }
             header("Location: ListarUsuarios.php");
         }
 

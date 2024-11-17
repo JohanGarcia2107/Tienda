@@ -1,6 +1,7 @@
 <?php
 
 require_once("../../App/BaseDatos/Conexion.php");
+require_once("../../App/Modelos/FuncionesAparte/Comprobaciones.php");
 require_once("../../App//Modelos/ClasesObj/Facturas.php");
 require_once("../../App/Modelos/FacturasSQL.php");
 

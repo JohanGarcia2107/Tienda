@@ -57,7 +57,7 @@
                             </form>
                             <?php }elseif($_SESSION['TipoId']==1){?>
                                 <form class="MasCarrito" action="ListarProductos.php">
-                                    <input style="padding: 10px;" class="ACarrito" type="submit" value="Administrador">
+                                    <input style="padding: 10px;" class="ACarrito" type="submit" value="Administrar">
                                 </form>
                             <?php }elseif ($ProductoEnCarrito == true) { ?>
                             <form class="MasCarrito" action="VistaIndividualProd.php?IdProd=<?php echo $IdProd ?>" method="post">
@@ -69,7 +69,7 @@
                                 <label for="Cantidad"> Cantidad a comprar
                                     <input type="number" id="Cantidad" name="CantidadAComprar" class="Cantidad" min="1" max="<?php echo $Stock ?>">
                                 </label>
-                                <input style="padding: 10px;" class="ACarrito" type="submit" value="Anadir al Carrito">
+                                <input style="padding: 10px;" class="ACarrito" type="submit" value="Añadir al Carrito">
                             </form>
                             <?php } ?>
                         </div>

@@ -53,7 +53,7 @@ class FacturasSQL{
             if ($Valor!=null) {
 
                 $Valor2="%".$Valor2."%";
-                $sentencia = $Conexion->prepare("SELECT `factura`.`IdFactura`,`factura`.`Direccion`,`factura`.`MedioDePago`,`factura`.`Fecha`,`factura`.`TotalAPagar`,`factura`.`IVA`,`factura`.`PagoFinal`,`usuarios`.`Nombre` FROM `factura` JOIN `usuarios` ON `factura`.`IdUsuario` = `usuarios`.`IdUsuario` WHERE `factura`.`IdUsuario` = :Valor1 OR `usuarios`.`Nombre` LIKE :Valor2 ORDER BY `factura`.`IdFactura` DESC;");
+                $sentencia = $Conexion->prepare("SELECT `factura`.`IdFactura`,`factura`.`Direccion`,`factura`.`MedioDePago`,`factura`.`Fecha`,`factura`.`TotalAPagar`,`factura`.`IVA`,`factura`.`PagoFinal`,`usuarios`.`Nombre` FROM `factura` JOIN `usuarios` ON `factura`.`IdUsuario` = `usuarios`.`IdUsuario` WHERE `factura`.`IdFactura` = :Valor1 OR `usuarios`.`Nombre` LIKE :Valor2 ORDER BY `factura`.`IdFactura` DESC;");
                 $sentencia->bindParam(':Valor1', $Valor1);
                 $sentencia->bindParam(':Valor2', $Valor2);
 

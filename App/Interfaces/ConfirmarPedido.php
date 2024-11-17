@@ -37,7 +37,7 @@
                             <option class="optionForm" value="1">Contra entrega</option>
                         </select>
                     
-                    <input class="SendForm" type="submit" value="Confirmar compra" >
+                    <input class="SendForm" type="submit" value="Confirmar pedido" >
                 </form>
                 <div class="TableContainer">
                     <div class="Tables CarritoCompra">

@@ -41,8 +41,8 @@ if ($_POST) {
         $Stock=$_POST['EditarIdStock'];
     if (Comprobaciones::Vacios($NombreProducto) && (Comprobaciones::Vacios($Descripcion)) && Comprobaciones::Vacios($Precio) && (Comprobaciones::Vacios($Stock))) {
         if ($Check!==false) {
-            if ($_FILES["fileToUpload"]["size"] < 10240000) {
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"&& $imageFileType != "gif" ) {
+            if ($_FILES["EditarIdImagenProd"]["size"] < 10240000) {
+                if($ImagenTipoDeArchivo != "jpg" && $ImagenTipoDeArchivo != "png" && $ImagenTipoDeArchivo != "jpeg"&& $ImagenTipoDeArchivo != "gif" ) {
                     
                     $Producto = new Productos($id, $NombreProducto, $Imagen, $Descripcion, $Precio, $Stock);
                     $ActualizacionExitosa = ProductosSQL::ActualizarProducto($Producto);

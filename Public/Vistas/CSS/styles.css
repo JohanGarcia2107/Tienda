@@ -412,6 +412,7 @@ h1{
 
 .NuestrosTrabajos_container:hover{
     opacity: 0.7;
+    cursor: zoom-in;
 }
 
 .NuestrosTrabajos_container:active{

@@ -3,6 +3,5 @@
     deny from all
     </Files>
 Options -Indexes
-RedirectMatch 301 ^/Tienda/App http://localhost/Tienda/Error404.php
-ErrorDocument 403 http://localhost/Tienda/Error404.php
 ErrorDocument 404 http://localhost/Tienda/Error404.php
+ErrorDocument 403 http://localhost/Tienda/Error404.php

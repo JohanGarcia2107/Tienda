@@ -33,8 +33,17 @@ class Comprobaciones{
 
     public static function Vacios ($Input){
         $cadenaLimpia = trim($Input);
-        // Verifica si la cadena resultante está vacía
-        return !(empty($cadenaLimpia));
+        $cadenaSinHTML = strip_tags($Input); //Elimina el HTML de la cadena
+        if (!(empty($cadenaLimpia)))  { // Verifica si la cadena resultante no está vacía
+            if ($cadenaSinHTML == $Input){ // Verifica si la cadena contiene HTML
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        
     }
 
     public static function ActualizacionCampos($IdFactura){
@@ -102,6 +111,10 @@ class Comprobaciones{
 }
 
 //Comprobaciones::ActualizacionCamposVacios(6); Si sirve
+
+
+/**$Resultado = Comprobaciones::Vacios("<script></script>");
+echo $Resultado?"True":"false";**/
 
 
 ?>

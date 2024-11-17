@@ -188,7 +188,7 @@ session_start();
     </section>
     <section class="Contacto_section" id="Contacto">
         <h2>Contacto</h2>
-        <form class="form" action="mailto:jdavid3mon@gmail.com">
+        <form class="form" action="">
             <label class="label_contact" for="name">Nombre
                 <input class="input_contact" required type="text" placeholder="Johan Garcia" name="name" id="name">
             </label>
