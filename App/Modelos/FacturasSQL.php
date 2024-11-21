@@ -53,7 +53,7 @@ class FacturasSQL{
             if ($Valor!=null) {
 
                 $Valor2="%".$Valor2."%";
-                $sentencia = $Conexion->prepare("SELECT `factura`.`IdFactura`,`factura`.`Direccion`,`factura`.`MedioDePago`,`factura`.`Fecha`,`factura`.`TotalAPagar`,`factura`.`IVA`,`factura`.`PagoFinal`,`usuarios`.`Nombre` FROM `factura` JOIN `usuarios` ON `factura`.`IdUsuario` = `usuarios`.`IdUsuario` WHERE `factura`.`IdFactura` = :Valor1 OR `usuarios`.`Nombre` LIKE :Valor2 ORDER BY `factura`.`IdFactura` DESC;");
+                $sentencia = $Conexion->prepare("SELECT `factura`.`IdFactura`,`factura`.`Direccion`,`factura`.`MedioDePago`,`factura`.`Fecha`,`factura`.`TotalAPagar`,`factura`.`IVA`,`factura`.`PagoFinal`,`usuarios`.`Nombre`, `factura`.`IdUsuario` FROM `factura` JOIN `usuarios` ON `factura`.`IdUsuario` = `usuarios`.`IdUsuario` WHERE `factura`.`IdFactura` = :Valor1 OR `usuarios`.`Nombre` LIKE :Valor2 ORDER BY `factura`.`IdFactura` DESC;");
                 $sentencia->bindParam(':Valor1', $Valor1);
                 $sentencia->bindParam(':Valor2', $Valor2);
 
@@ -98,6 +98,52 @@ class FacturasSQL{
                     array_push($ListaFacturas,$Factura);
                 }
             }
+
+            $sentencia=null;
+            $Conexion=null;
+
+            return $ListaFacturas;
+
+
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+
+    }
+
+    public static function ListarFacturasUser($Valor=null){
+
+        $ListaFacturas=array();
+        $Valor1=$Valor;
+        if (isset($Valor2)) {
+            $Valor2=strval($Valor2);
+        }
+        
+
+        try {
+            $Conexion=Conexion::getConexion();
+
+                $sentencia = $Conexion->prepare("SELECT `factura`.`IdFactura`,`factura`.`Direccion`,`factura`.`MedioDePago`,`factura`.`Fecha`,`factura`.`TotalAPagar`,`factura`.`IVA`,`factura`.`PagoFinal`,`usuarios`.`Nombre` FROM `factura` JOIN `usuarios` ON `factura`.`IdUsuario` = `usuarios`.`IdUsuario` WHERE `usuarios`.`IdUsuario` = :Valor1 ORDER BY `factura`.`IdFactura` DESC;");
+                $sentencia->bindParam(':Valor1', $Valor1);
+            
+                $sentencia->execute();
+
+                $Fila=$sentencia->fetchAll();
+
+                foreach ($Fila as $FilaActual) {
+                    $Factura= new Facturas();
+                    $Factura->SetIdFactura($FilaActual['IdFactura']);
+                    $Factura->SetDireccion($FilaActual['Direccion']);
+                    $Factura->SetMedioDePago($FilaActual['MedioDePago']);
+                    $Factura->SetFecha($FilaActual['Fecha']);
+                    $Factura->SetTotalAPagar($FilaActual['TotalAPagar']);
+                    $Factura->SetIVA($FilaActual['IVA']);
+                    $Factura->SetTotalAPagarConIVA($FilaActual['PagoFinal']);
+                    $Factura->SetIdUsuario($FilaActual['Nombre']);
+
+                    array_push($ListaFacturas,$Factura);
+                }
 
             $sentencia=null;
             $Conexion=null;

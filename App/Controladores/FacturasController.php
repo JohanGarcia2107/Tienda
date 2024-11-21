@@ -4,7 +4,7 @@ session_start();
 
 if ($_SESSION) {
         $UsuarioId = $_SESSION['IdUsuario'];
-        $ListaFactura = FacturasSQL::ListarFacturas($UsuarioId);
+        $ListaFactura = FacturasSQL::ListarFacturasUser($UsuarioId);
 }else {
     header("Location: ../index.php");
 }
